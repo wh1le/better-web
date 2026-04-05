@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+DATA_DIR="data"
+
+# pick file with fzf
+FILE=$(ls -t "$DATA_DIR"/*.json 2>/dev/null | \
+  sed "s|$DATA_DIR/||" | \
+  fzf --prompt="Select research: " --height=20 --reverse)
+
+[ -z "$FILE" ] && exit 0
+FILE="$DATA_DIR/$FILE"
+
+# stats
+bin/bw digest-cmd "$FILE" --raw > /dev/null 2>&1 || true
+python3 -c "
+import json
+with open('$FILE') as f:
+    data = json.load(f)
+q = data.get('query') or ', '.join(data.get('queries', []))
+good = [r for r in data['results'] if r.get('content') and len(r['content']) > 50]
+chars = sum(len(r['content']) for r in good)
+print(f'Query:  {q}')
+print(f'Pages:  {len(good)}/{len(data[\"results\"])}')
+print(f'Tokens: ~{chars // 4:,}')
+"
+
+echo ""
+echo "[c] Copy to clipboard"
+echo "[p] Print file path"
+echo "[s] Send to claude"
+echo "[q] Quit"
+echo ""
+read -r -p "Action: " ACTION
+
+case "$ACTION" in
+  c)
+    DIGEST=$(bin/bw digest-cmd --raw "$FILE")
+    echo "$DIGEST" | wl-copy
+    DIGEST_FILE="${FILE%.json}.txt"
+    echo "$DIGEST" > "$DIGEST_FILE"
+    echo "Copied to clipboard."
+    echo "Saved: $DIGEST_FILE"
+    ;;
+  p)
+    echo "$FILE"
+    ;;
+  s)
+    read -r -p "Prompt (enter for default): " PROMPT
+    [ -z "$PROMPT" ] && PROMPT="Analyze this research. Summarize the consensus, list top recommendations ranked by frequency, and note any contrarian opinions."
+    echo ""
+    bin/bw digest-cmd --raw "$FILE" | claude "$PROMPT"
+    ;;
+  *)
+    echo "Aborted."
+    ;;
+esac

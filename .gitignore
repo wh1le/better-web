@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.direnv/
+*.egg-info/
+dist/
+flake.lock
+.tranco/
+models/
+data/

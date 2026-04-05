@@ -1,0 +1,50 @@
+[searx]
+url = "http://localhost:8882/search"
+
+[scrape]
+page_timeout = 10000
+batch_min = 2
+batch_max = 4
+delay_min = 1.0
+delay_max = 3.0
+backoff_min = 3.0
+backoff_max = 6.0
+
+[digest]
+max_chars_per_page = 12000
+min_content_length = 200
+min_quality_score = 30
+
+[blocklists]
+# downloaded to data/blocklists/ via `bw update-blocklist`
+sources = [
+    { name = "dev-filter", stars = 2326, url = "https://raw.githubusercontent.com/quenhus/uBlock-Origin-dev-filter/main/dist/other_format/uBlacklist/all.txt" },
+    { name = "content-farms", stars = 1401, url = "https://danny0838.github.io/content-farm-terminator/files/blocklist-ublacklist/content-farms.txt" },
+    { name = "so-translation", stars = 963, url = "https://raw.githubusercontent.com/arosh/ublacklist-stackoverflow-translation/master/uBlacklist.txt" },
+    { name = "bad-websites", stars = 724, url = "https://raw.githubusercontent.com/popcar2/BadWebsiteBlocklist/refs/heads/main/uBlacklist.txt" },
+    { name = "github-translation", stars = 246, url = "https://raw.githubusercontent.com/arosh/ublacklist-github-translation/master/uBlacklist.txt" },
+]
+
+# additional domains to always block (on top of downloaded lists)
+custom_blocked = [
+    "linkedin.com",
+    "facebook.com",
+    "instagram.com",
+    "tiktok.com",
+    "x.com",
+    "twitter.com",
+    "threads.net",
+    "researchgate.net",
+    "quora.com",
+    "pinterest.com",
+    "pinterest.co.uk",
+    "yelp.com",
+    "tripadvisor.com",
+    "amazon.com",
+    "ebay.com",
+    "walmart.com",
+    "indeed.com",
+    "glassdoor.com",
+    "scribd.com",
+    "academia.edu",
+]

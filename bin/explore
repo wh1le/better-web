@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+DATA_DIR="data"
+EDITOR="${EDITOR:-vim}"
+TMPFILE=$(mktemp /tmp/bw-explore-XXXXXX.md)
+trap 'rm -f "$TMPFILE"' EXIT
+
+# --- step 1: pick a session ---
+SESSION=$(ls -t "$DATA_DIR"/*.json 2>/dev/null | \
+  xargs -I{} python3 -c "
+import json, sys, os
+with open('{}') as f:
+    d = json.load(f)
+q = d.get('query') or ', '.join(d.get('queries', []))
+n = sum(1 for r in d['results'] if r.get('content') and len(r['content']) > 50)
+print(f'{os.path.basename(\"{}\")}  |  {n} pages  |  {q[:80]}')
+" | fzf --prompt="Session: " --height=20 --reverse | awk -F'  \\|' '{print $1}' | xargs)
+
+[ -z "$SESSION" ] && exit 0
+SESSION="$DATA_DIR/$SESSION"
+
+# --- step 2: pick a page ---
+PAGE_IDX=$(python3 -c "
+import json
+with open('$SESSION') as f:
+    d = json.load(f)
+for i, r in enumerate(d['results']):
+    content = r.get('content') or ''
+    if len(content) < 50:
+        continue
+    q = r.get('quality', {})
+    score = q.get('score', '?')
+    rel = q.get('relevance', 0.0)
+    tier = 'HIGH' if isinstance(score, int) and score >= 70 else ('MED' if isinstance(score, int) and score >= 45 else 'LOW')
+    title = r.get('title', 'Untitled')[:60]
+    domain = r.get('url', '').split('//')[1].split('/')[0] if '//' in r.get('url', '') else ''
+    print(f'{i:>3}  [{tier:>4}] {score:>3}/100  rel={rel:.2f}  {domain:<30}  {title}')
+" | fzf --prompt="Page: " --height=30 --reverse | awk '{print $1}')
+
+[ -z "$PAGE_IDX" ] && exit 0
+
+# --- step 3: render page as clean markdown, open in editor ---
+poetry run python3 -c "
+import json
+with open('$SESSION') as f:
+    d = json.load(f)
+r = d['results'][$PAGE_IDX]
+q = r.get('quality', {})
+score = q.get('score', '?')
+rel = q.get('relevance', 0.0)
+ptype = q.get('page_type', 'unknown')
+flags = ', '.join(q.get('flags', []))
+
+print(f'# {r.get(\"title\", \"Untitled\")}')
+print()
+print(f'{r[\"url\"]}')
+print()
+print(f'quality: {score}/100 | relevance: {rel} | type: {ptype}')
+if flags:
+    print(f'flags: {flags}')
+print()
+print('---')
+print()
+
+# use readability + markdownify if raw HTML is saved, otherwise fall back to trafilatura text
+html = r.get('html')
+if html:
+    from lib.render import html_to_markdown
+    print(html_to_markdown(html, r.get('url', '')))
+else:
+    print(r.get('content') or 'No content extracted.')
+" > "$TMPFILE"
+
+$EDITOR "$TMPFILE"

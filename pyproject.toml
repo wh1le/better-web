@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "better-web"
+version = "0.1.0"
+description = "Terminal-first web research: search, scrape, extract, digest for LLM"
+authors = ["wh1le"]
+package-mode = false
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+crawl4ai = "*"
+playwright = "1.56.0"
+trafilatura = "*"
+typer = "*"
+rich = "^14.3.3"
+textstat = "*"
+thinkst-zippy = "*"
+tranco = "^0.8.1"
+tldextract = "^5.3.1"
+datasketch = "^1.9.0"
+sentence-transformers = "^5.3.0"
+readability-lxml = "^0.8.4.1"
+markdownify = "^1.2.2"
+youtube-transcript-api = "*"
+yt-dlp = "*"
+faster-whisper = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
