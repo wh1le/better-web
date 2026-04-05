@@ -10,6 +10,10 @@ Search engines increasingly return SEO spam and low-quality content. LLM-powered
 
 better-web automates the entire research workflow: query a private search engine, scrape results, score quality using multiple signals (domain reputation, AI detection, readability, semantic relevance), filter out the noise, and return focused, streamlined information ready for LLM summarization — all in one command.
 
+## Demo
+
+![demo](assets/demo.gif)
+
 ## Dependencies
 
 | Library | Purpose |

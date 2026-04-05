@@ -1,5 +1,11 @@
 """Semantic relevance scoring: query vs page content using sentence-transformers."""
 import os
+import warnings
+
+os.environ.setdefault("HF_HUB_DISABLE_PROGRESS_BARS", "1")
+os.environ.setdefault("TRANSFORMERS_VERBOSITY", "error")
+os.environ.setdefault("HF_HUB_DISABLE_TELEMETRY", "1")
+warnings.filterwarnings("ignore", message=".*unauthenticated.*")
 
 from lib.config import ROOT
 
@@ -12,6 +18,10 @@ _model = None
 def _get_model():
     global _model
     if _model is None:
+        import logging
+        # suppress HF/sentence-transformers loading noise
+        for name in ("sentence_transformers", "transformers", "huggingface_hub", "safetensors"):
+            logging.getLogger(name).setLevel(logging.ERROR)
         from sentence_transformers import SentenceTransformer
         _model = SentenceTransformer(MODEL_NAME, cache_folder=os.path.join(ROOT, "models"))
     return _model
