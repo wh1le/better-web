@@ -1,6 +1,31 @@
 # better-web
 
+> **Personal MVP** — not packaged for general use. Partially vibe-coded, might have bugs. Built for my own research workflow.
+
 Search the web, scrape pages, score content quality, filter out junk — copy clean results for LLM consumption.
+
+## Dependencies
+
+| Library | Purpose |
+|---------|---------|
+| [crawl4ai](https://github.com/unclecode/crawl4ai) | Headless browser scraping with stealth mode |
+| [playwright](https://playwright.dev/python/) | Browser automation engine |
+| [trafilatura](https://github.com/adbar/trafilatura) | Content extraction from HTML |
+| [typer](https://typer.tiangolo.com/) | CLI framework |
+| [rich](https://github.com/Textualize/rich) | Terminal formatting and progress bars |
+| [textstat](https://github.com/textstat/textstat) | Readability metrics (Flesch Reading Ease, grade level) |
+| [thinkst-zippy](https://github.com/thinkst/zippy) | AI detection (compression-based, no ML models) |
+| [tranco](https://tranco-list.eu/) | Domain reputation scoring (top-1M ranking) |
+| [tldextract](https://github.com/john-googler/tldextract) | Domain analysis and heuristics |
+| [datasketch](https://github.com/ekzhu/datasketch) | MinHash LSH for near-duplicate detection |
+| [sentence-transformers](https://www.sbert.net/) | Semantic relevance scoring (all-MiniLM-L6-v2) |
+| [readability-lxml](https://github.com/buriy/python-readability) | Alternative readability extraction |
+| [markdownify](https://github.com/matthewwithanm/python-markdownify) | HTML to markdown conversion |
+| [youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) | YouTube caption extraction |
+| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | YouTube video download (for whisper fallback) |
+| [faster-whisper](https://github.com/SYSTRAN/faster-whisper) | Audio transcription when no captions available |
+
+Requires Python 3.12+.
 
 ## Setup
 
@@ -8,7 +33,7 @@ Search the web, scrape pages, score content quality, filter out junk — copy cl
 nix develop && poetry install
 ```
 
-Requires local [SearXNG](https://docs.searxng.org/) (default `localhost:8882`). Configure in `config.toml`.
+Requires a local [SearXNG](https://docs.searxng.org/) instance. The URL is hardcoded in `config.toml` under `[searx]` (default `http://localhost:8882/search`) — change it there to point to your instance.
 
 ## Usage
 
