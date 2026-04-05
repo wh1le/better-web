@@ -1,8 +1,10 @@
-# better-web
+# Better Web
 
 > **Personal MVP** — not packaged for general use. Partially vibe-coded, might have bugs. Built for my own research workflow.
 
-Search the web, scrape pages, score content quality, filter out junk — copy clean results for LLM consumption.
+Search the web, scrape pages, score content quality, filter out junk — copy clean results for LLM consumption. All results are saved as parsed, cleaned markdown — ready to read, pipe to an LLM, or re-export later.
+
+Runs on simple hardware (tested on a ThinkPad with integrated graphics). No GPU required — the only ML model used is a small sentence-transformer (~80MB) for relevance scoring.
 
 ## Why
 
@@ -12,7 +14,7 @@ better-web automates the entire research workflow: query a private search engine
 
 ## Demo
 
-![demo](assets/demo.gif)
+![demo](https://raw.githubusercontent.com/wh1le/better-web/main/assets/demo.gif)
 
 ## Dependencies
 
