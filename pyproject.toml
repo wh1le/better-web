@@ -3,6 +3,7 @@ name = "better-web"
 version = "0.1.0"
 description = "Terminal-first web research: search, scrape, extract, digest for LLM"
 authors = ["wh1le"]
+license = "MIT"
 package-mode = false
 
 
@@ -24,6 +25,25 @@ markdownify = "^1.2.2"
 youtube-transcript-api = "*"
 yt-dlp = "*"
 faster-whisper = "*"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "*"
+mypy = "*"
+radon = "^6.0.1"
+pylint = "^4.0.5"
+bandit = "^1.9.4"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "A", "SIM", "TCH"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_configs = true
+ignore_missing_imports = true
 
 [build-system]
 requires = ["poetry-core"]

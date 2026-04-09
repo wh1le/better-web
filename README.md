@@ -1,51 +1,45 @@
 # Better Web
 
-> **Personal MVP** — not packaged for general use. Partially vibe-coded, might have bugs. Built for my own research workflow.
+Terminal-first web research tool. Search the web, scrape pages, score content quality, filter out junk — get clean markdown ready for LLM consumption.
 
-Search the web, scrape pages, score content quality, filter out junk — copy clean results for LLM consumption. All results are saved as parsed, cleaned markdown — ready to read, pipe to an LLM, or re-export later.
-
-Runs on simple hardware (tested on a ThinkPad with integrated graphics). No GPU required — the only ML model used is a small sentence-transformer (~80MB) for relevance scoring.
+![demo](https://raw.githubusercontent.com/wh1le/better-web/main/assets/demo.gif)
 
 ## Why
 
 Search engines increasingly return SEO spam and low-quality content. LLM-powered search tools often hallucinate or give shallow answers. A simple research question shouldn't mean 25+ open tabs just to find a few good sources.
 
-better-web automates the entire research workflow: query a private search engine, scrape results, score quality using multiple signals (domain reputation, AI detection, readability, semantic relevance), filter out the noise, and return focused, streamlined information ready for LLM summarization — all in one command.
+better-web automates the entire research workflow: query a private search engine, scrape results, score quality using multiple signals (domain reputation, AI detection, readability, semantic relevance), filter out the noise, and return focused, clean markdown — all in one command.
 
-## Demo
+No GPU required — runs on simple hardware. The only ML model used is a small sentence-transformer (~80MB) for relevance scoring.
 
-![demo](https://raw.githubusercontent.com/wh1le/better-web/main/assets/demo.gif)
+## Prerequisites
 
-## Dependencies
+- Python 3.12+
+- A local [SearXNG](https://docs.searxng.org/) instance for search queries
 
-| Library | Purpose |
-|---------|---------|
-| [crawl4ai](https://github.com/unclecode/crawl4ai) | Headless browser scraping with stealth mode |
-| [playwright](https://playwright.dev/python/) | Browser automation engine |
-| [trafilatura](https://github.com/adbar/trafilatura) | Content extraction from HTML |
-| [typer](https://typer.tiangolo.com/) | CLI framework |
-| [rich](https://github.com/Textualize/rich) | Terminal formatting and progress bars |
-| [textstat](https://github.com/textstat/textstat) | Readability metrics (Flesch Reading Ease, grade level) |
-| [thinkst-zippy](https://github.com/thinkst/zippy) | AI detection (compression-based, no ML models) |
-| [tranco](https://tranco-list.eu/) | Domain reputation scoring (top-1M ranking) |
-| [tldextract](https://github.com/john-googler/tldextract) | Domain analysis and heuristics |
-| [datasketch](https://github.com/ekzhu/datasketch) | MinHash LSH for near-duplicate detection |
-| [sentence-transformers](https://www.sbert.net/) | Semantic relevance scoring (all-MiniLM-L6-v2) |
-| [readability-lxml](https://github.com/buriy/python-readability) | Alternative readability extraction |
-| [markdownify](https://github.com/matthewwithanm/python-markdownify) | HTML to markdown conversion |
-| [youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) | YouTube caption extraction |
-| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | YouTube video download (for whisper fallback) |
-| [faster-whisper](https://github.com/SYSTRAN/faster-whisper) | Audio transcription when no captions available |
+**Quick SearXNG setup with Docker:**
 
-Requires Python 3.12+.
+```bash
+docker run -d --name searxng -p 8882:8080 searxng/searxng
+```
 
 ## Setup
+
+**With Nix (recommended):**
 
 ```bash
 nix develop && poetry install
 ```
 
-Requires a local [SearXNG](https://docs.searxng.org/) instance. The URL is hardcoded in `config.toml` under `[searx]` (default `http://localhost:8882/search`) — change it there to point to your instance.
+**Without Nix:**
+
+```bash
+pip install poetry
+poetry install
+playwright install chromium
+```
+
+Configure your SearXNG URL in `config.toml` under `[searx]` (default `http://localhost:8882/search`).
 
 ## Usage
 
@@ -96,3 +90,7 @@ quality: 72/100 | relevance: 0.81 | type: article
 ## Config
 
 `config.toml` — SearXNG URL, scrape timing, quality threshold, blocklist sources. See file for details.
+
+## License
+
+MIT
