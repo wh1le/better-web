@@ -1,50 +1,46 @@
-[searx]
+# ── Search Engine ──
+[searx_engine]
 url = "http://localhost:8882/search"
+max_pages = 20
+delay = 1.0
 
+# ── Scraping ──
 [scrape]
-page_timeout = 10000
-batch_min = 2
-batch_max = 4
-delay_min = 1.0
-delay_max = 3.0
-backoff_min = 3.0
-backoff_max = 6.0
+timeout = 10000
+batch = [2, 4]
+delay = [1.0, 3.0]
+backoff = [3.0, 6.0]
 
-[digest]
-max_chars_per_page = 12000
-min_content_length = 200
-min_quality_score = 30
+# ── Quality Scoring ──
+[scoring]
+baseline = 50
+ai_penalty = -20
+min_text = 50
+relevance = { off_topic = 0.15, low = 0.2, moderate = 0.3, high = 0.5 }
 
-[blocklists]
-# downloaded to data/blocklists/ via `bw update-blocklist`
-sources = [
-    { name = "dev-filter", stars = 2326, url = "https://raw.githubusercontent.com/quenhus/uBlock-Origin-dev-filter/main/dist/other_format/uBlacklist/all.txt" },
-    { name = "content-farms", stars = 1401, url = "https://danny0838.github.io/content-farm-terminator/files/blocklist-ublacklist/content-farms.txt" },
-    { name = "so-translation", stars = 963, url = "https://raw.githubusercontent.com/arosh/ublacklist-stackoverflow-translation/master/uBlacklist.txt" },
-    { name = "bad-websites", stars = 724, url = "https://raw.githubusercontent.com/popcar2/BadWebsiteBlocklist/refs/heads/main/uBlacklist.txt" },
-    { name = "github-translation", stars = 246, url = "https://raw.githubusercontent.com/arosh/ublacklist-github-translation/master/uBlacklist.txt" },
-]
+# ── Dedup ──
+[dedup]
+threshold = 0.6
 
-# additional domains to always block (on top of downloaded lists)
-custom_blocked = [
-    "linkedin.com",
-    "facebook.com",
-    "instagram.com",
-    "tiktok.com",
-    "x.com",
-    "twitter.com",
-    "threads.net",
-    "researchgate.net",
-    "quora.com",
-    "pinterest.com",
-    "pinterest.co.uk",
-    "yelp.com",
-    "tripadvisor.com",
-    "amazon.com",
-    "ebay.com",
-    "walmart.com",
-    "indeed.com",
-    "glassdoor.com",
-    "scribd.com",
-    "academia.edu",
-]
+# ── Output ──
+[output]
+max_chars = 12000
+min_length = 200
+min_score = 30
+tiers = { high = 70, med = 45 }
+
+# ── Models ──
+[models]
+embedding = "all-MiniLM-L6-v2"
+embedding_max_chars = 5000
+whisper = "base"
+whisper_device = "cpu"
+
+# ── LLM (for --analyze-with-llm) ──
+[llm]
+model_path = "models/model.gguf"
+context_length = 2048
+max_tokens = 512
+max_input_chars = 4000
+temperature = 0.1
+threads = 4
