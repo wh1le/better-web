@@ -3,16 +3,15 @@ import asyncio
 import os
 import re
 from datetime import datetime
-from typing import Optional
 
 import typer
 
-from lib.search import search, dedup
-from lib.scrape import rewrite_url, scrape_urls, process_pages
 from lib.dedup import deduplicate
+from lib.digest import digest, find_latest, stats
+from lib.logging import done, error, info, warn
 from lib.output import output_path, save, slugify
-from lib.digest import find_latest, digest, stats
-from lib.logging import info, error, done, warn
+from lib.scrape import process_pages, rewrite_url, scrape_urls
+from lib.search import dedup, search
 
 app = typer.Typer(help="Search, scrape, and digest the web.")
 
@@ -37,9 +36,10 @@ def _summary(scrape_log: dict, proc_log: dict, entries: list[dict]):
 def search_cmd(
     queries: list[str],
     limit: int = 10,
-    engines: Optional[str] = None,
+    engines: str | None = None,
     quick: bool = typer.Option(False, "--quick", help="Print snippets only, no scraping"),
     copy: bool = typer.Option(True, "--no-copy", help="Skip copying digest to clipboard"),
+    analyze_with_llm: bool = typer.Option(False, "--analyze-with-llm", help="Extract relevant info with local LLM"),
 ):
     """Search 1+ queries, scrape and save. --quick for snippets only."""
     all_results = []
@@ -133,7 +133,7 @@ def scrape(url: str):
 
 @app.command()
 def digest_cmd(
-    file: Optional[str] = typer.Argument(None),
+    file: str | None = typer.Argument(None),
     raw: bool = False,
 ):
     """Extract clean text from research file for LLM."""
