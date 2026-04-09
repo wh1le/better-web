@@ -6,6 +6,8 @@ from collections import Counter
 import textstat
 import tldextract
 
+from lib.settings import settings
+
 try:
     from tranco import Tranco
     _tranco_list = Tranco(cache=True).list()
@@ -24,30 +26,8 @@ try:
         except Exception:
             return 0.0
 except ImportError:
-    def _ai_score(_text: str) -> float:
+    def _ai_score(_text: str) -> float:  # type: ignore[misc]
         return 0.0
-
-
-SLOP_PHRASES = [
-    "it's important to note", "it is important to note",
-    "in this article", "let's dive", "dive into",
-    "in today's digital", "whether you're a",
-    "in conclusion", "game changer", "game-changer",
-    "comprehensive guide", "everything you need to know",
-    "look no further", "without further ado",
-    "in the world of", "navigating the",
-    "at the end of the day", "it's worth noting",
-    "unlock the power", "the ultimate guide",
-    "streamline your", "take it to the next level",
-    "leverage the power", "delve into",
-]
-
-LOW_QUALITY_TLDS = {
-    "xyz", "click", "top", "buzz", "site", "online", "store",
-    "club", "icu", "fun", "wang", "gdn", "bid", "loan", "racing",
-}
-
-HIGH_QUALITY_TLDS = {"edu", "gov", "mil", "ac.uk", "gov.uk", "edu.au"}
 
 
 # --- domain reputation ---
@@ -55,13 +35,13 @@ HIGH_QUALITY_TLDS = {"edu", "gov", "mil", "ac.uk", "gov.uk", "edu.au"}
 def _domain_score(url: str) -> tuple[int, list[str], dict]:
     """Score domain from URL. Returns (points, flags, details)."""
     points = 0
-    flags = []
-    details = {}
+    flags: list[str] = []
+    details: dict[str, object] = {}
 
     ext = tldextract.extract(url)
-    domain = ext.registered_domain  # e.g. "github.com"
-    name = ext.domain               # e.g. "github"
-    suffix = ext.suffix              # e.g. "com", "co.uk"
+    domain = ext.registered_domain
+    name = ext.domain
+    suffix = ext.suffix
 
     if not domain:
         return 0, ["bad_url"], {}
@@ -69,7 +49,7 @@ def _domain_score(url: str) -> tuple[int, list[str], dict]:
     details["domain"] = domain
 
     # tranco rank — boost only, never penalize unranked domains
-    rank = _tranco_list.rank(domain) if _tranco_list else -1
+    rank: int = _tranco_list.rank(domain) if _tranco_list else -1
     details["tranco_rank"] = rank
     if rank > 0:
         if rank <= 1000:
@@ -85,16 +65,15 @@ def _domain_score(url: str) -> tuple[int, list[str], dict]:
             points += 2
 
     # TLD signals
-    if suffix in HIGH_QUALITY_TLDS:
+    if suffix in settings.lists.high_quality_tlds:
         points += 5
         flags.append("institutional_tld")
-    elif suffix in LOW_QUALITY_TLDS:
+    elif suffix in settings.lists.low_quality_tlds:
         points -= 10
         flags.append("junk_tld")
 
     # domain name heuristics
-    hyphen_count = name.count("-")
-    if hyphen_count >= 3:
+    if name.count("-") >= 3:
         points -= 10
         flags.append("hyphen_stuffed")
 
@@ -106,9 +85,8 @@ def _domain_score(url: str) -> tuple[int, list[str], dict]:
         points -= 8
         flags.append("year_in_domain")
 
-    seo_words = {"best", "top", "review", "guide", "tips", "ultimate", "cheap", "deals", "coupon"}
     name_words = set(name.lower().split("-"))
-    seo_overlap = name_words & seo_words
+    seo_overlap = name_words & settings.lists.seo_keywords
     if seo_overlap:
         points -= 8
         flags.append(f"seo_domain:{','.join(seo_overlap)}")
@@ -143,8 +121,8 @@ def _page_type(url: str) -> str:
 def _html_signals(html: str, text: str) -> tuple[int, list[str], dict]:
     """Score based on HTML structure. Returns (points, flags, details)."""
     points = 0
-    flags = []
-    details = {}
+    flags: list[str] = []
+    details: dict[str, object] = {}
 
     html_lower = html.lower()
     text_len = max(len(text), 1)
@@ -175,7 +153,7 @@ def _html_signals(html: str, text: str) -> tuple[int, list[str], dict]:
 
     # link density
     link_count = len(re.findall(r'<a[\s>]', html_lower))
-    density = link_count / (text_len / 100)
+    density: float = link_count / (text_len / 100)
     details["link_density"] = round(density, 2)
     if density > 3.0:
         points -= 10
@@ -183,10 +161,10 @@ def _html_signals(html: str, text: str) -> tuple[int, list[str], dict]:
     elif density > 2.0:
         points -= 5
 
-    # nav-to-content ratio (lots of nav = junk page)
+    # nav-to-content ratio
     nav_len = sum(len(m) for m in re.findall(r'<nav[\s>].*?</nav>', html_lower, re.DOTALL))
     if nav_len > 0:
-        nav_ratio = nav_len / max(len(html), 1)
+        nav_ratio: float = nav_len / max(len(html), 1)
         details["nav_ratio"] = round(nav_ratio, 3)
         if nav_ratio > 0.3:
             points -= 5
@@ -209,13 +187,14 @@ def _html_signals(html: str, text: str) -> tuple[int, list[str], dict]:
 
 def _text_signals(text: str) -> tuple[int, list[str], dict]:
     """Score based on text content. Returns (points, flags, details)."""
+    scoring = settings.scoring
     points = 0
-    flags = []
-    details = {}
+    flags: list[str] = []
+    details: dict[str, object] = {}
 
     words = text.split()
     word_count = len(words)
-    sentences = [s.strip() for s in re.split(r'[.!?]+', text) if len(s.strip()) > 5]
+    sentences = [sent.strip() for sent in re.split(r'[.!?]+', text) if len(sent.strip()) > 5]
 
     # readability
     flesch = textstat.flesch_reading_ease(text)
@@ -231,7 +210,7 @@ def _text_signals(text: str) -> tuple[int, list[str], dict]:
     ai = _ai_score(text)
     details["ai_score"] = round(ai, 2)
     if ai > 0.5:
-        points -= 20
+        points += scoring.ai_penalty
         flags.append("likely_ai")
 
     # content length
@@ -260,7 +239,7 @@ def _text_signals(text: str) -> tuple[int, list[str], dict]:
     if word_count > 20:
         bigrams = [f"{words[i]} {words[i+1]}" for i in range(len(words) - 1)]
         bigram_freq = Counter(bigrams)
-        repeated = sum(1 for _, c in bigram_freq.items() if c > 3)
+        repeated = sum(1 for _, count in bigram_freq.items() if count > 3)
         repeat_ratio = repeated / max(len(bigrams), 1)
         if repeat_ratio > 0.05:
             points -= 10
@@ -269,18 +248,18 @@ def _text_signals(text: str) -> tuple[int, list[str], dict]:
 
     # sentence length variance
     if len(sentences) > 5:
-        lens = [len(s.split()) for s in sentences]
-        mean = statistics.mean(lens)
+        lengths = [len(sent.split()) for sent in sentences]
+        mean = statistics.mean(lengths)
         if mean > 0:
-            cv = statistics.stdev(lens) / mean
-            details["sentence_variance"] = round(cv, 2)
-            if cv < 0.3:
+            coefficient_of_variation = statistics.stdev(lengths) / mean
+            details["sentence_variance"] = round(coefficient_of_variation, 2)
+            if coefficient_of_variation < 0.3:
                 points -= 5
                 flags.append("uniform_sentences")
 
     # slop phrases
     text_lower = text.lower()
-    slop_count = sum(1 for p in SLOP_PHRASES if p in text_lower)
+    slop_count = sum(1 for phrase in settings.lists.slop_phrases if phrase in text_lower)
     if slop_count >= 3:
         points -= 15
         flags.append(f"slop_phrases:{slop_count}")
@@ -289,9 +268,8 @@ def _text_signals(text: str) -> tuple[int, list[str], dict]:
     details["slop_phrase_count"] = slop_count
 
     # discussion signals
-    discussion_markers = ['replied', 'says ', 'wrote:', 'commented', 'points)', 'upvote']
-    disc_count = sum(1 for m in discussion_markers if m in text_lower)
-    if disc_count >= 2:
+    discussion_count = sum(1 for marker in settings.lists.discussion_markers if marker in text_lower)
+    if discussion_count >= 2:
         points += 10
         flags.append("discussion")
 
@@ -302,12 +280,15 @@ def _text_signals(text: str) -> tuple[int, list[str], dict]:
 
 def score(text: str, html: str | None = None, url: str | None = None, query: str | None = None) -> dict:
     """Score content quality. Returns dict with score (0-100), flags, details, page_type, relevance."""
-    if not text or len(text.strip()) < 50:
+    scoring = settings.scoring
+    relevance_thresholds = scoring.relevance
+
+    if not text or len(text.strip()) < scoring.min_text:
         return {"score": 0, "flags": ["empty"], "details": {}, "page_type": "unknown", "relevance": 0.0}
 
-    total_points = 50  # baseline
-    all_flags = []
-    all_details = {}
+    total_points = scoring.baseline
+    all_flags: list[str] = []
+    all_details: dict[str, object] = {}
 
     # domain reputation
     if url:
@@ -333,23 +314,29 @@ def score(text: str, html: str | None = None, url: str | None = None, query: str
     all_details["text"] = det
 
     # semantic relevance to query
-    rel = 0.0
+    relevance_score = 0.0
     if query:
         from lib.relevance import relevance
-        rel = relevance(query, text)
-        all_details["relevance"] = round(rel, 3)
+        relevance_score = relevance(query, text)
+        all_details["relevance"] = round(relevance_score, 3)
         words = len(text.split())
-        if rel < 0.15 and words > 200:
-            return {"score": 0, "flags": all_flags + ["off_topic"], "details": all_details, "page_type": ptype, "relevance": round(rel, 3)}
-        elif rel >= 0.5:
+        if relevance_score < relevance_thresholds.off_topic and words > 200:
+            return {
+                "score": 0, "flags": all_flags + ["off_topic"],
+                "details": all_details, "page_type": ptype, "relevance": round(relevance_score, 3),
+            }
+        elif relevance_score >= relevance_thresholds.high:
             total_points += 15
             all_flags.append("highly_relevant")
-        elif rel >= 0.3:
+        elif relevance_score >= relevance_thresholds.moderate:
             total_points += 8
             all_flags.append("relevant")
-        elif rel < 0.2 and words > 200:
+        elif relevance_score < relevance_thresholds.low and words > 200:
             total_points -= 15
             all_flags.append("low_relevance")
 
     score_val = max(0, min(100, total_points))
-    return {"score": score_val, "flags": all_flags, "details": all_details, "page_type": ptype, "relevance": round(rel, 3)}
+    return {
+        "score": score_val, "flags": all_flags,
+        "details": all_details, "page_type": ptype, "relevance": round(relevance_score, 3),
+    }

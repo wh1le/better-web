@@ -4,16 +4,7 @@ import json
 import os
 
 from .output import SEARCH_DIR
-from .config import get as cfg
-
-
-def _digest_config():
-    c = cfg().get("digest", {})
-    return {
-        "max_chars": c.get("max_chars_per_page", 3000),
-        "min_length": c.get("min_content_length", 200),
-        "min_quality": c.get("min_quality_score", 30),
-    }
+from .settings import settings
 
 
 def find_latest() -> str | None:
@@ -21,16 +12,18 @@ def find_latest() -> str | None:
     return files[-1] if files else None
 
 
-def _tier(score: int) -> str:
-    if score >= 70:
+def _tier(quality_score: int) -> str:
+    tiers = settings.output.tiers
+    if quality_score >= tiers.high:
         return "HIGH"
-    if score >= 45:
+    if quality_score >= tiers.med:
         return "MED"
     return "LOW"
 
 
 def digest(path: str) -> str:
-    dc = _digest_config()
+    output = settings.output
+
     with open(path) as f:
         data = json.load(f)
 
@@ -38,13 +31,18 @@ def digest(path: str) -> str:
     log = data.get("log", {})
 
     # filter by length + quality, sort best first
-    min_q = dc["min_quality"]
     usable = [
-        r for r in data["results"]
-        if len(r.get("content") or "") >= dc["min_length"]
-        and r.get("quality", {}).get("score", 50) >= min_q
+        result for result in data["results"]
+        if len(result.get("content") or "") >= output.min_length
+        and result.get("quality", {}).get("score", 50) >= output.min_score
     ]
-    usable.sort(key=lambda r: r.get("quality", {}).get("score", 50) * max(r.get("quality", {}).get("relevance", 0.5), 0.1), reverse=True)
+    usable.sort(
+        key=lambda result: (
+            result.get("quality", {}).get("score", 50)
+            * max(result.get("quality", {}).get("relevance", 0.5), 0.1)
+        ),
+        reverse=True,
+    )
 
     total = len(data["results"])
     filtered = total - len(usable)
@@ -59,22 +57,20 @@ def digest(path: str) -> str:
         meta.append(f"{dedup_removed} near-duplicates removed")
     parts.append(f"_Scored and ranked by content quality. {', '.join(meta)}._\n")
 
-    for i, r in enumerate(usable, 1):
-        content = r["content"]
-        q = r.get("quality", {})
-        q_score = q.get("score", 50)
-        relevance = q.get("relevance", 0.0)
-        page_type = q.get("page_type", "unknown")
-        domain = q.get("details", {}).get("domain", {}).get("domain", "")
+    for result in usable:
+        content = result["content"]
+        quality = result.get("quality", {})
+        quality_score = quality.get("score", 50)
+        relevance_score = quality.get("relevance", 0.0)
+        page_type = quality.get("page_type", "unknown")
 
         # cap content per page
-        if len(content) > dc["max_chars"]:
-            content = content[:dc["max_chars"]] + "\n[...truncated]"
+        if len(content) > output.max_chars:
+            content = content[:output.max_chars] + settings.output.truncation_marker
 
-        tier = _tier(q_score)
-        header = f"## [{tier}] {r['title']}"
-        meta_line = f"source: {r['url']}"
-        score_line = f"quality: {q_score}/100 | relevance: {relevance} | type: {page_type}"
+        tier = _tier(quality_score)
+        header = f"## [{tier}] {result['title']}"
+        score_line = f"quality: {quality_score}/100 | relevance: {relevance_score} | type: {page_type}"
 
         parts.append(header)
         parts.append(score_line)
@@ -85,23 +81,23 @@ def digest(path: str) -> str:
 
 
 def stats(path: str) -> dict:
-    dc = _digest_config()
+    output = settings.output
+
     with open(path) as f:
         data = json.load(f)
 
     query = data.get("query") or ", ".join(data.get("queries", []))
-    min_q = dc["min_quality"]
     good = [
-        r for r in data["results"]
-        if r.get("content") and len(r["content"]) > dc["min_length"]
-        and r.get("quality", {}).get("score", 50) >= min_q
+        result for result in data["results"]
+        if result.get("content") and len(result["content"]) > output.min_length
+        and result.get("quality", {}).get("score", 50) >= output.min_score
     ]
     low_quality = sum(
-        1 for r in data["results"]
-        if r.get("content") and len(r["content"]) > dc["min_length"]
-        and r.get("quality", {}).get("score", 50) < min_q
+        1 for result in data["results"]
+        if result.get("content") and len(result["content"]) > output.min_length
+        and result.get("quality", {}).get("score", 50) < output.min_score
     )
-    chars = sum(min(len(r["content"]), dc["max_chars"]) for r in good)
+    chars = sum(min(len(result["content"]), output.max_chars) for result in good)
 
     return {
         "file": os.path.basename(path),
@@ -110,5 +106,5 @@ def stats(path: str) -> dict:
         "usable": len(good),
         "filtered": low_quality,
         "chars": chars,
-        "tokens": chars // 4,
+        "tokens": chars // settings.output.tokens_per_char,
     }

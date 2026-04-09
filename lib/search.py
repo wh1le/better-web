@@ -6,36 +6,33 @@ import time
 import urllib.parse
 import urllib.request
 
-from lib.logging import info
-from lib.config import get as cfg
 from lib.filter import is_blocked
-
-SEARX_URL = cfg().get("searx", {}).get("url", "http://localhost:8882/search")
-SKIP_EXTENSIONS = {".pdf", ".doc", ".docx", ".ppt", ".pptx", ".xls", ".xlsx", ".zip", ".tar", ".gz"}
-
-MAX_PAGES = 20
+from lib.logging import info
+from lib.settings import settings
 
 
 def _fetch_page(query: str, page: int, engines: str | None = None) -> list[dict]:
-    p = {"q": query, "format": "json", "pageno": page}
+    p: dict[str, str | int] = {"q": query, "format": "json", "pageno": page}
     if engines:
         p["engines"] = engines
     params = urllib.parse.urlencode(p)
-    req = urllib.request.Request(f"{SEARX_URL}?{params}")
+    req = urllib.request.Request(f"{settings.searx_engine.url}?{params}")
     with urllib.request.urlopen(req) as resp:
         data = json.loads(resp.read())
-    return data.get("results", [])
+    results: list[dict] = data.get("results", [])
+    return results
 
 
 def search(query: str, limit: int = 100, engines: str | None = None) -> list[dict]:
     """Search SearXNG. Fetches one page at a time, filters, continues if needed."""
-    seen = set()
-    out = []
+    skip_ext = set(settings.lists.skip_extensions)
+    seen: set[str] = set()
+    out: list[dict] = []
     skipped_ext = 0
     skipped_blocked = 0
     page = 1
 
-    while len(out) < limit and page <= MAX_PAGES:
+    while len(out) < limit and page <= settings.searx_engine.max_pages:
         batch = _fetch_page(query, page, engines)
         if not batch:
             break
@@ -44,7 +41,7 @@ def search(query: str, limit: int = 100, engines: str | None = None) -> list[dic
         for r in batch:
             url = re.sub(r'[?#].*', '', r["url"])
             ext = os.path.splitext(url.split("?")[0])[1].lower()
-            if ext in SKIP_EXTENSIONS:
+            if ext in skip_ext:
                 skipped_ext += 1
                 filtered_this_page += 1
                 continue
@@ -58,7 +55,7 @@ def search(query: str, limit: int = 100, engines: str | None = None) -> list[dic
 
         # only fetch next page if we lost results to filtering and still need more
         if filtered_this_page > 0 and len(out) < limit:
-            time.sleep(1)
+            time.sleep(settings.searx_engine.delay)
             page += 1
         else:
             break

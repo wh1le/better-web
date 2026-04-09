@@ -2,7 +2,7 @@
 from contextlib import contextmanager
 
 from rich.console import Console
-from rich.progress import Progress, BarColumn, MofNCompleteColumn, TextColumn
+from rich.progress import BarColumn, MofNCompleteColumn, Progress, TextColumn
 
 __all__ = ["console", "status", "progress", "info", "warn", "error", "done"]
 

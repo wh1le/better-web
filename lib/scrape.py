@@ -8,9 +8,10 @@ import sys
 
 import trafilatura
 
-from lib.logging import warn, progress
+from lib.logging import progress
 from lib.quality import score as quality_score
-from lib.youtube import is_youtube_url, get_transcript
+from lib.settings import settings
+from lib.youtube import get_transcript, is_youtube_url
 
 logging.getLogger("crawl4ai").setLevel(logging.ERROR)
 logging.getLogger("playwright").setLevel(logging.ERROR)
@@ -30,15 +31,23 @@ async def scrape_urls(urls: list[str]) -> tuple[list, dict]:
     """Scrape a list of URLs with rate limiting. Returns (pages, log)."""
     from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
+    scrape_settings = settings.scrape
+    batch_min, batch_max = scrape_settings.batch
+    delay_min, delay_max = scrape_settings.delay
+    backoff_min, backoff_max = scrape_settings.backoff
+
     browser_cfg = BrowserConfig(headless=True, enable_stealth=True, verbose=False)
-    run_cfg = CrawlerRunConfig(simulate_user=True, magic=True, page_timeout=10000, verbose=False)
+    run_cfg = CrawlerRunConfig(
+        simulate_user=True, magic=True,
+        page_timeout=scrape_settings.timeout, verbose=False,
+    )
     log = {"blocked": 0}
 
     pages = []
 
     # Suppress playwright's stderr spam during browser init
     _stderr = sys.stderr
-    sys.stderr = open(os.devnull, "w")
+    sys.stderr = open(os.devnull, "w")  # noqa: SIM115
     try:
         ctx = AsyncWebCrawler(config=browser_cfg)
         crawler = await ctx.__aenter__()
@@ -50,14 +59,14 @@ async def scrape_urls(urls: list[str]) -> tuple[list, dict]:
         i = 0
         with progress("Scraping", total=len(urls)) as advance:
             while i < len(urls):
-                batch_size = random.randint(2, 4)
+                batch_size = random.randint(batch_min, batch_max)
                 batch = urls[i:i + batch_size]
                 tasks = [crawler.arun(url=url, config=run_cfg) for url in batch]
                 results_batch = await asyncio.gather(*tasks, return_exceptions=True)
 
                 blocked_count = sum(
-                    1 for rb in results_batch
-                    if not isinstance(rb, Exception) and not rb.success and "403" in str(rb.error_message)
+                    bool(not isinstance(rb, BaseException) and not rb.success and "403" in str(rb.error_message))
+                    for rb in results_batch
                 )
                 log["blocked"] += blocked_count
                 pages.extend(results_batch)
@@ -67,9 +76,9 @@ async def scrape_urls(urls: list[str]) -> tuple[list, dict]:
                 if blocked_count == len(results_batch):
                     break
                 elif blocked_count > 0:
-                    await asyncio.sleep(random.uniform(3, 6))
+                    await asyncio.sleep(random.uniform(backoff_min, backoff_max))
                 elif i < len(urls):
-                    await asyncio.sleep(random.uniform(1, 3))
+                    await asyncio.sleep(random.uniform(delay_min, delay_max))
     finally:
         await ctx.__aexit__(None, None, None)
 
@@ -82,22 +91,22 @@ def process_pages(results: list[dict], pages: list) -> tuple[list[dict], dict]:
     entries = []
 
     with progress("Analyzing", total=len(results)) as advance:
-      for r, page in zip(results, pages):
+      for result, page in zip(results, pages, strict=False):
         entry = {
-            "title": r["title"],
-            "url": r["url"],
-            "snippet": r.get("content", ""),
+            "title": result["title"],
+            "url": result["url"],
+            "snippet": result.get("content", ""),
             "content": None,
             "error": None,
         }
-        if "_query" in r:
-            entry["query"] = r["_query"]
+        if "_query" in result:
+            entry["query"] = result["_query"]
 
-        if is_youtube_url(r["url"]):
-            transcript = get_transcript(r["url"])
+        if is_youtube_url(result["url"]):
+            transcript = get_transcript(result["url"])
             if transcript:
                 entry["content"] = transcript
-                entry["quality"] = quality_score(transcript, None, entry["url"], r.get("_query"))
+                entry["quality"] = quality_score(transcript, None, entry["url"], result.get("_query"))
                 log["scraped"] += 1
             else:
                 entry["error"] = "No transcript available"
@@ -110,8 +119,8 @@ def process_pages(results: list[dict], pages: list) -> tuple[list[dict], dict]:
             if html:
                 entry["html"] = html
                 entry["content"] = extract_content(html)
-                entry["quality"] = quality_score(entry["content"], html, entry["url"], r.get("_query"))
-            if entry["content"] and len(entry["content"]) > 50:
+                entry["quality"] = quality_score(entry["content"], html, entry["url"], result.get("_query"))
+            if entry["content"] and len(entry["content"]) > settings.scoring.min_text:
                 log["scraped"] += 1
             elif not page.success:
                 entry["error"] = page.error_message

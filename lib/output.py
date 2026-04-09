@@ -4,12 +4,14 @@ import os
 import re
 
 from lib.logging import done
+from lib.settings import settings
 
 SEARCH_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 
 
 def slugify(text: str) -> str:
-    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')[:80]
+    max_length = settings.output.max_slug_length
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')[:max_length]
 
 
 def output_path(mode: str, query: str) -> str:

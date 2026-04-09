@@ -4,8 +4,9 @@ import os
 import re
 import urllib.request
 
-from lib.config import get as cfg, ROOT
-from lib.logging import info, done
+from lib.config import ROOT
+from lib.logging import done, info
+from lib.settings import settings
 
 BLOCKLIST_DIR = os.path.join(ROOT, "data", "blocklists")
 
@@ -15,14 +16,12 @@ def _parse_ublacklist_line(line: str) -> str | None:
     line = line.strip()
     if not line or line.startswith("#") or line.startswith("!"):
         return None
-    # match patterns like *://*.example.com/* or *://example.com/*
-    m = re.match(r'\*://\*?\.?([a-z0-9][\w.-]+\.[a-z]{2,})(/\*)?$', line, re.IGNORECASE)
-    if m:
-        return m.group(1).lower()
-    # plain domain
-    m = re.match(r'^([a-z0-9][\w.-]+\.[a-z]{2,})$', line, re.IGNORECASE)
-    if m:
-        return m.group(1).lower()
+    match = re.match(r'\*://\*?\.?([a-z0-9][\w.-]+\.[a-z]{2,})(/\*)?$', line, re.IGNORECASE)
+    if match:
+        return match.group(1).lower()
+    match = re.match(r'^([a-z0-9][\w.-]+\.[a-z]{2,})$', line, re.IGNORECASE)
+    if match:
+        return match.group(1).lower()
     return None
 
 
@@ -31,9 +30,9 @@ def _load_blocklist_file(path: str) -> set[str]:
     try:
         with open(path) as f:
             for line in f:
-                d = _parse_ublacklist_line(line)
-                if d:
-                    domains.add(d)
+                domain = _parse_ublacklist_line(line)
+                if domain:
+                    domains.add(domain)
     except FileNotFoundError:
         pass
     return domains
@@ -41,13 +40,10 @@ def _load_blocklist_file(path: str) -> set[str]:
 
 def _load_all_blocklists() -> set[str]:
     domains = set()
-    # downloaded lists
-    for f in glob.glob(os.path.join(BLOCKLIST_DIR, "*.txt")):
-        domains |= _load_blocklist_file(f)
-    # custom blocked from config
-    config = cfg()
-    for d in config.get("blocklists", {}).get("custom_blocked", []):
-        domains.add(d.lower())
+    for filepath in glob.glob(os.path.join(BLOCKLIST_DIR, "*.txt")):
+        domains |= _load_blocklist_file(filepath)
+    for domain in settings.lists.custom_blocked:
+        domains.add(domain.lower())
     return domains
 
 
@@ -72,10 +68,8 @@ def domain_from_url(url: str) -> str:
 def is_blocked(url: str) -> bool:
     domain = domain_from_url(url)
     blocked = blocked_domains()
-    # exact match
     if domain in blocked:
         return True
-    # subdomain match
     parts = domain.split(".")
     for i in range(1, len(parts)):
         parent = ".".join(parts[i:])
@@ -87,23 +81,19 @@ def is_blocked(url: str) -> bool:
 def update_blocklists():
     """Download all blocklist sources from config."""
     os.makedirs(BLOCKLIST_DIR, exist_ok=True)
-    config = cfg()
-    sources = config.get("blocklists", {}).get("sources", [])
 
-    for src in sources:
-        name = src["name"]
-        url = src["url"]
+    for source in settings.lists.blocklists:
+        name = source["name"]
+        url = source["url"]
         out = os.path.join(BLOCKLIST_DIR, f"{name}.txt")
         info(f"Downloading {name}...")
         try:
             urllib.request.urlretrieve(url, out)
-            # count domains
             domains = _load_blocklist_file(out)
             done(f"  {name}: {len(domains)} domains")
-        except Exception as e:
-            info(f"  Failed: {e}")
+        except Exception as err:
+            info(f"  Failed: {err}")
 
-    # reset cache
     global _blocked
     _blocked = None
     total = len(blocked_domains())
