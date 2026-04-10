@@ -1,23 +1,8 @@
-"""Content-level deduplication using MinHash LSH (datasketch)."""
-from datasketch import MinHash, MinHashLSH
+"""Content deduplication using MinHash LSH."""
+from datasketch import MinHashLSH
 
 from lib.settings import settings
-
-
-def _shingle(text: str) -> set[str]:
-    """Create k-shingles (character n-grams) from text."""
-    shingle_size = settings.dedup.shingle_size
-    text = text.lower().strip()
-    if len(text) < shingle_size:
-        return {text}
-    return {text[i:i + shingle_size] for i in range(len(text) - shingle_size + 1)}
-
-
-def _minhash(shingles: set[str]) -> MinHash:
-    mh = MinHash(num_perm=settings.dedup.num_perm)
-    for shingle in shingles:
-        mh.update(shingle.encode("utf-8"))
-    return mh
+from lib.shingling import minhash, shingle
 
 
 def deduplicate(entries: list[dict]) -> list[dict]:
@@ -47,8 +32,8 @@ def deduplicate(entries: list[dict]) -> list[dict]:
             kept.append(entry)
             continue
 
-        shingles = _shingle(content)
-        mh = _minhash(shingles)
+        shingles = shingle(content, dedup_settings.shingle_size)
+        mh = minhash(shingles, dedup_settings.num_perm)
 
         key = entry.get("url", str(id(entry)))
         try:

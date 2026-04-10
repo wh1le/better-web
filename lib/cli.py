@@ -1,4 +1,3 @@
-"""better-web: search, scrape, digest from terminal."""
 import asyncio
 import os
 import re
@@ -15,21 +14,6 @@ from lib.search import dedup, search
 
 app = typer.Typer(help="Search, scrape, and digest the web.")
 
-
-def _summary(scrape_log: dict, proc_log: dict, entries: list[dict]):
-    chars = sum(len(e.get("content") or "") for e in entries if e.get("content") and len(e["content"]) > 50)
-    tokens = chars // 4
-    parts = [f"{proc_log['scraped']} scraped"]
-    if scrape_log["blocked"]:
-        parts.append(f"{scrape_log['blocked']} blocked")
-    if proc_log["errors"]:
-        parts.append(f"{proc_log['errors']} errors")
-    parts.append(f"~{tokens:,} tokens")
-    msg = ", ".join(parts)
-    if scrape_log["blocked"] or proc_log["errors"]:
-        warn(msg)
-    else:
-        done(msg)
 
 
 @app.command("search")
@@ -167,6 +151,21 @@ def update_blocklist():
     """Download and update domain blocklists from configured sources."""
     from lib.filter import update_blocklists
     update_blocklists()
+
+def _summary(scrape_log: dict, proc_log: dict, entries: list[dict]):
+    chars = sum(len(e.get("content") or "") for e in entries if e.get("content") and len(e["content"]) > 50)
+    tokens = chars // 4
+    parts = [f"{proc_log['scraped']} scraped"]
+    if scrape_log["blocked"]:
+        parts.append(f"{scrape_log['blocked']} blocked")
+    if proc_log["errors"]:
+        parts.append(f"{proc_log['errors']} errors")
+    parts.append(f"~{tokens:,} tokens")
+    msg = ", ".join(parts)
+    if scrape_log["blocked"] or proc_log["errors"]:
+        warn(msg)
+    else:
+        done(msg)
 
 
 if __name__ == "__main__":

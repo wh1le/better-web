@@ -2,8 +2,7 @@
 import os
 import warnings
 
-from lib.config import ROOT
-from lib.settings import settings
+from lib.settings import ROOT, settings
 
 os.environ.setdefault("HF_HUB_DISABLE_PROGRESS_BARS", "1")  # must be set before HF imports
 os.environ.setdefault("TRANSFORMERS_VERBOSITY", "error")

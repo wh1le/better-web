@@ -1,9 +1,8 @@
 """Local LLM analysis: extract query-relevant information from scraped pages."""
 import os
 
-from lib.config import ROOT
 from lib.logging import progress, warn
-from lib.settings import settings
+from lib.settings import ROOT, settings
 
 _model = None
 

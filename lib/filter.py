@@ -4,9 +4,8 @@ import os
 import re
 import urllib.request
 
-from lib.config import ROOT
 from lib.logging import done, info
-from lib.settings import settings
+from lib.settings import ROOT, settings
 
 BLOCKLIST_DIR = os.path.join(ROOT, "data", "blocklists")
 

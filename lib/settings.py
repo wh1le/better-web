@@ -1,27 +1,35 @@
 """Typed settings from config.toml + lists.toml with dot access."""
 from __future__ import annotations
 
+import tomllib
+from pathlib import Path
 from typing import Any
 
-from lib.config import get as _cfg
-from lib.config import get_lists as _lists
+ROOT = Path(__file__).resolve().parent.parent
+_CONFIG_PATH = ROOT / "config.toml"
+_LISTS_PATH = ROOT / "lists.toml"
 
 
 class Section:
     """Turn a dict into dot-accessible attributes."""
 
-    def __init__(self, data: dict):
+    def __init__(self, data: dict[str, Any]) -> None:
         for key, val in data.items():
             setattr(self, key, Section(val) if isinstance(val, dict) else val)
 
     def __getattr__(self, name: str) -> Any:
         raise AttributeError(f"Setting '{name}' not found")
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"Section({vars(self)})"
 
 
-def _merge(base: dict, override: dict) -> dict:
+def _load_toml(path: Path) -> dict[str, Any]:
+    with path.open("rb") as f:
+        return tomllib.load(f)
+
+
+def _merge(base: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]:
     """Deep merge override into base."""
     out = dict(base)
     for k, v in override.items():
@@ -32,7 +40,7 @@ def _merge(base: dict, override: dict) -> dict:
     return out
 
 
-DEFAULTS = {
+DEFAULTS: dict[str, Any] = {
     "searx_engine": {
         "url": "http://localhost:8882/search",
         "max_pages": 20,
@@ -83,11 +91,13 @@ DEFAULTS = {
     },
 }
 
-LIST_DEFAULTS = {
+LIST_DEFAULTS: dict[str, Any] = {
     "skip_extensions": [".pdf", ".doc", ".docx", ".ppt", ".pptx", ".xls", ".xlsx", ".zip", ".tar", ".gz"],
     "high_quality_tlds": ["edu", "gov", "mil", "ac.uk", "gov.uk", "edu.au"],
-    "low_quality_tlds": ["xyz", "click", "top", "buzz", "site", "online", "store",
-                         "club", "icu", "fun", "wang", "gdn", "bid", "loan", "racing"],
+    "low_quality_tlds": [
+        "xyz", "click", "top", "buzz", "site", "online", "store",
+        "club", "icu", "fun", "wang", "gdn", "bid", "loan", "racing",
+    ],
     "seo_keywords": ["best", "top", "review", "guide", "tips", "ultimate", "cheap", "deals", "coupon"],
     "slop_phrases": [
         "it's important to note", "it is important to note",
@@ -110,10 +120,9 @@ LIST_DEFAULTS = {
 
 def load() -> Section:
     """Load config.toml + lists.toml, merge with defaults, return as dot-access object."""
-    merged = _merge(DEFAULTS, _cfg())
-    lists = _merge(LIST_DEFAULTS, _lists())
+    merged = _merge(DEFAULTS, _load_toml(_CONFIG_PATH))
+    lists = _merge(LIST_DEFAULTS, _load_toml(_LISTS_PATH))
 
-    # convert to sets for fast lookup
     for key in ("high_quality_tlds", "low_quality_tlds", "seo_keywords"):
         lists[key] = set(lists[key])
 
