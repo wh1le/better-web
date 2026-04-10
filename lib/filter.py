@@ -7,7 +7,7 @@ import urllib.request
 from lib.logging import done, info
 from lib.settings import ROOT, settings
 
-BLOCKLIST_DIR = os.path.join(ROOT, "data", "blocklists")
+BLOCKLIST_DIR = os.path.join(ROOT, "output", "blocklists")
 
 
 def _parse_ublacklist_line(line: str) -> str | None:
@@ -41,7 +41,7 @@ def _load_all_blocklists() -> set[str]:
     domains = set()
     for filepath in glob.glob(os.path.join(BLOCKLIST_DIR, "*.txt")):
         domains |= _load_blocklist_file(filepath)
-    for domain in settings.lists.custom_blocked:
+    for domain in settings.custom_blocked:
         domains.add(domain.lower())
     return domains
 
@@ -81,7 +81,7 @@ def update_blocklists():
     """Download all blocklist sources from config."""
     os.makedirs(BLOCKLIST_DIR, exist_ok=True)
 
-    for source in settings.lists.blocklists:
+    for source in settings.blocklists:
         name = source["name"]
         url = source["url"]
         out = os.path.join(BLOCKLIST_DIR, f"{name}.txt")

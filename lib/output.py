@@ -6,7 +6,7 @@ import re
 from lib.logging import done
 from lib.settings import settings
 
-SEARCH_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
+SEARCH_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "output")
 
 
 def slugify(text: str) -> str:

@@ -1,0 +1,35 @@
+qa:
+  - /questions/
+  - /answers/
+wiki:
+  - /wiki/
+  - .wiki.
+docs:
+  - /docs/
+  - /doc/
+  - /documentation/
+  - .readthedocs.
+  - /reference/
+code:
+  - /blob/
+  - /tree/
+  - /commit/
+  - /pull/
+  - /issues/
+  - /issue/
+discussion:
+  - /comments/
+  - /comment/
+  - /discuss
+  - /forum
+  - /thread
+article:
+  - /blog/
+  - /posts/
+  - /post/
+  - /article
+product:
+  - /product/
+  - /buy/
+  - /pricing
+  - /shop/

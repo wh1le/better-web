@@ -1,0 +1,6 @@
+edu
+gov
+mil
+ac.uk
+gov.uk
+edu.au

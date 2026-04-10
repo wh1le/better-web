@@ -45,10 +45,10 @@ def domain_score(url: str) -> tuple[int, list[str], dict]:
             points += 2
 
     # TLD signals
-    if suffix in settings.lists.high_quality_tlds:
+    if suffix in settings.high_quality_tlds:
         points += 5
         flags.append("institutional_tld")
-    elif suffix in settings.lists.low_quality_tlds:
+    elif suffix in settings.low_quality_tlds:
         points -= 10
         flags.append("junk_tld")
 
@@ -66,7 +66,7 @@ def domain_score(url: str) -> tuple[int, list[str], dict]:
         flags.append("year_in_domain")
 
     name_words = set(name.lower().split("-"))
-    seo_overlap = name_words & settings.lists.seo_keywords
+    seo_overlap = name_words & settings.seo_keywords
     if seo_overlap:
         points -= 8
         flags.append(f"seo_domain:{','.join(seo_overlap)}")
@@ -77,18 +77,7 @@ def domain_score(url: str) -> tuple[int, list[str], dict]:
 def page_type(url: str) -> str:
     """Classify page type from URL patterns."""
     path = url.lower().split("?")[0]
-    if re.search(r'/questions/\d+|/answers?/', path):
-        return "qa"
-    if '/wiki/' in path or '.wiki.' in path:
-        return "wiki"
-    if re.search(r'/docs?/|/documentation/|\.readthedocs\.|/reference/', path):
-        return "docs"
-    if re.search(r'/blob/|/tree/|/commit/|/pull/|/issues?/', path):
-        return "code"
-    if re.search(r'/comments?/|/discuss|/forum|/thread', path):
-        return "discussion"
-    if re.search(r'/blog/|/posts?/|/article', path):
-        return "article"
-    if re.search(r'/product/|/buy/|/pricing|/shop/', path):
-        return "product"
+    for label, patterns in settings.page_types.items():
+        if any(p in path for p in patterns):
+            return label
     return "unknown"

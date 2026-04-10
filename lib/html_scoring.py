@@ -1,6 +1,8 @@
 """HTML structural signals: link density, ad scripts, code blocks."""
 import re
 
+from lib.settings import settings
+
 
 def html_signals(html: str, text: str) -> tuple[int, list[str], dict]:
     """Score based on HTML structure. Returns (points, flags, details)."""
@@ -55,10 +57,7 @@ def html_signals(html: str, text: str) -> tuple[int, list[str], dict]:
             flags.append("nav_heavy")
 
     # ad/tracker scripts
-    ad_patterns = re.findall(
-        r'(adsbygoogle|googletag|doubleclick|adsense|taboola|outbrain|'
-        r'analytics\.js|gtag|fbevents|hotjar)', html_lower
-    )
+    ad_patterns = [t for t in settings.ad_trackers if t in html_lower]
     details["ad_scripts"] = len(ad_patterns)
     if len(ad_patterns) >= 4:
         points -= 5

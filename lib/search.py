@@ -25,7 +25,7 @@ def _fetch_page(query: str, page: int, engines: str | None = None) -> list[dict]
 
 def search(query: str, limit: int = 100, engines: str | None = None) -> list[dict]:
     """Search SearXNG. Fetches one page at a time, filters, continues if needed."""
-    skip_ext = set(settings.lists.skip_extensions)
+    skip_ext = settings.skip_extensions
     seen: set[str] = set()
     out: list[dict] = []
     skipped_ext = 0

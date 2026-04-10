@@ -82,7 +82,7 @@ def text_signals(text: str) -> tuple[int, list[str], dict]:
 
     # slop phrases
     text_lower = text.lower()
-    slop_count = sum(1 for phrase in settings.lists.slop_phrases if phrase in text_lower)
+    slop_count = sum(1 for phrase in settings.ai_phrases if phrase in text_lower)
     if slop_count >= 3:
         points -= 15
         flags.append(f"slop_phrases:{slop_count}")
@@ -91,7 +91,7 @@ def text_signals(text: str) -> tuple[int, list[str], dict]:
     details["slop_phrase_count"] = slop_count
 
     # discussion signals
-    discussion_count = sum(1 for marker in settings.lists.discussion_markers if marker in text_lower)
+    discussion_count = sum(1 for marker in settings.discussion_markers if marker in text_lower)
     if discussion_count >= 2:
         points += 10
         flags.append("discussion")

@@ -123,7 +123,7 @@ def digest_cmd(
     """Extract clean text from research file for LLM."""
     path = file if file and os.path.isfile(file) else find_latest()
     if not path:
-        error("No research files in data/")
+        error("No research files in output/")
         raise typer.Exit(1)
 
     if raw:

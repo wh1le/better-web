@@ -1,0 +1,10 @@
+adsbygoogle
+googletag
+doubleclick
+adsense
+taboola
+outbrain
+analytics.js
+gtag
+fbevents
+hotjar

@@ -3,7 +3,6 @@ import asyncio
 import logging
 import os
 import random
-import re
 import sys
 
 import trafilatura
@@ -18,7 +17,9 @@ logging.getLogger("playwright").setLevel(logging.ERROR)
 
 
 def rewrite_url(url: str) -> str:
-    return re.sub(r'https?://(www\.)?reddit\.com/', 'https://old.reddit.com/', url)
+    for src, dst in settings.url_rewrites.items():
+        url = url.replace(src, dst)
+    return url
 
 
 def extract_content(html: str) -> str | None:
