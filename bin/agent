@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-DATA_DIR="data"
+DATA_DIR="output"
 
 # pick file with fzf
 FILE=$(ls -t "$DATA_DIR"/*.json 2>/dev/null | \

@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-DATA_DIR="data"
+DATA_DIR="output"
 EDITOR="${EDITOR:-vim}"
 TMPFILE=$(mktemp /tmp/bw-explore-XXXXXX.md)
 trap 'rm -f "$TMPFILE"' EXIT
