@@ -5,6 +5,7 @@ description = "Terminal-first web research: search, scrape, extract, digest for 
 authors = ["wh1le"]
 license = "MIT"
 packages = [{include = "lib"}]
+include = ["data/**/*", "config.yaml"]
 
 [tool.poetry.scripts]
 bw = "lib.cli:app"
