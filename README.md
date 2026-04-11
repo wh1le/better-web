@@ -31,6 +31,13 @@ docker run -d --name searxng -p 8882:8080 searxng/searxng
 nix develop && poetry install
 ```
 
+**With pipx (isolated install):**
+
+```bash
+pipx install git+https://github.com/wh1le/better-web.git
+playwright install chromium
+```
+
 **Without Nix:**
 
 ```bash
@@ -90,6 +97,10 @@ quality: 72/100 | relevance: 0.81 | type: article
 ## Config
 
 `config.toml` — SearXNG URL, scrape timing, quality threshold, blocklist sources. See file for details.
+
+## TODO
+
+- [ ] Support XDG configuration path at `~/.config/bw`
 
 ## License
 
