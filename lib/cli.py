@@ -149,8 +149,8 @@ def digest_cmd(
 @app.command()
 def update_blocklist():
     """Download and update domain blocklists from configured sources."""
-    from lib.filter import update_blocklists
-    update_blocklists()
+    from lib.domain_filter import domain_filter
+    domain_filter.update()
 
 def _summary(scrape_log: dict, proc_log: dict, entries: list[dict]):
     chars = sum(len(e.get("content") or "") for e in entries if e.get("content") and len(e["content"]) > 50)

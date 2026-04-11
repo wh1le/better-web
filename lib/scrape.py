@@ -92,41 +92,41 @@ def process_pages(results: list[dict], pages: list) -> tuple[list[dict], dict]:
     entries = []
 
     with progress("Analyzing", total=len(results)) as advance:
-      for result, page in zip(results, pages, strict=False):
-        entry = {
-            "title": result["title"],
-            "url": result["url"],
-            "snippet": result.get("content", ""),
-            "content": None,
-            "error": None,
-        }
-        if "_query" in result:
-            entry["query"] = result["_query"]
+        for result, page in zip(results, pages, strict=False):
+            entry = {
+                "title": result["title"],
+                "url": result["url"],
+                "snippet": result.get("content", ""),
+                "content": None,
+                "error": None,
+            }
+            if "_query" in result:
+                entry["query"] = result["_query"]
 
-        if is_youtube_url(result["url"]):
-            transcript = get_transcript(result["url"])
-            if transcript:
-                entry["content"] = transcript
-                entry["quality"] = quality_score(transcript, None, entry["url"], result.get("_query"))
-                log["scraped"] += 1
+            if is_youtube_url(result["url"]):
+                transcript = get_transcript(result["url"])
+                if transcript:
+                    entry["content"] = transcript
+                    entry["quality"] = quality_score(transcript, None, entry["url"], result.get("_query"))
+                    log["scraped"] += 1
+                else:
+                    entry["error"] = "No transcript available"
+                    log["errors"] += 1
+            elif isinstance(page, Exception):
+                entry["error"] = str(page)
+                log["errors"] += 1
             else:
-                entry["error"] = "No transcript available"
-                log["errors"] += 1
-        elif isinstance(page, Exception):
-            entry["error"] = str(page)
-            log["errors"] += 1
-        else:
-            html = getattr(page, "html", None)
-            if html:
-                entry["html"] = html
-                entry["content"] = extract_content(html)
-                entry["quality"] = quality_score(entry["content"], html, entry["url"], result.get("_query"))
-            if entry["content"] and len(entry["content"]) > settings.scoring.min_text:
-                log["scraped"] += 1
-            elif not page.success:
-                entry["error"] = page.error_message
-                log["errors"] += 1
-        entries.append(entry)
-        advance()
+                html = getattr(page, "html", None)
+                if html:
+                    entry["html"] = html
+                    entry["content"] = extract_content(html)
+                    entry["quality"] = quality_score(entry["content"], html, entry["url"], result.get("_query"))
+                if entry["content"] and len(entry["content"]) > settings.scoring.min_text:
+                    log["scraped"] += 1
+                elif not page.success:
+                    entry["error"] = page.error_message
+                    log["errors"] += 1
+            entries.append(entry)
+            advance()
 
     return entries, log

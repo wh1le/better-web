@@ -43,8 +43,8 @@ def score(text: str, html: str | None = None, url: str | None = None, query: str
     # semantic relevance to query
     relevance_score = 0.0
     if query:
-        from lib.relevance import relevance
-        relevance_score = relevance(query, text)
+        from lib.relevance_scorer import scorer
+        relevance_score = scorer.score(query, text)
         all_details["relevance"] = round(relevance_score, 3)
         words = len(text.split())
         if relevance_score < relevance_thresholds.off_topic and words > 200:

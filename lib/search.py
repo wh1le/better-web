@@ -6,7 +6,7 @@ import time
 import urllib.parse
 import urllib.request
 
-from lib.filter import is_blocked
+from lib.domain_filter import domain_filter
 from lib.logging import info
 from lib.settings import settings
 
@@ -45,7 +45,7 @@ def search(query: str, limit: int = 100, engines: str | None = None) -> list[dic
                 skipped_ext += 1
                 filtered_this_page += 1
                 continue
-            if is_blocked(url):
+            if domain_filter.is_blocked(url):
                 skipped_blocked += 1
                 filtered_this_page += 1
                 continue
