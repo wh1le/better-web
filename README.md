@@ -62,12 +62,6 @@ bin/explore                           # fzf picker -> preview in editor
 bin/agent                             # fzf picker -> copy/claude
 ```
 
-## Pipeline
-
-```
-query -> SearXNG -> dedup -> blocklist filter -> scrape -> extract -> score -> dedup content -> filter -> rank -> clipboard
-```
-
 ## Scoring
 
 Every page gets 0-100 based on:
@@ -84,17 +78,6 @@ Every page gets 0-100 based on:
 | Content dedup | [datasketch](https://github.com/ekzhu/datasketch) | MinHash LSH, removes near-duplicate pages |
 
 Pages below `min_quality_score` (default 30) are filtered out. Remaining pages are sorted best-first and tier-labeled (`HIGH`/`MED`/`LOW`).
-
-## Output
-
-```markdown
-# Research: python asyncio best practices
-_Scored and ranked. 5 sources, 3 filtered out._
-
-## [HIGH] AsyncIO Deep Dive - Real Python
-quality: 72/100 | relevance: 0.81 | type: article
-<content>
-```
 
 ## Config
 
