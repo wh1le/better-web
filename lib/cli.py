@@ -1,9 +1,12 @@
 import asyncio
+import json
 import os
 import re
+import sys
 from datetime import datetime
 
-import typer
+import click
+from rich.console import Console
 
 from lib.dedup import deduplicate
 from lib.digest import digest, find_latest, stats
@@ -12,20 +15,22 @@ from lib.output import output_path, save, slugify
 from lib.scrape import process_pages, rewrite_url, scrape_urls
 from lib.search import dedup, search
 
-app = typer.Typer(help="Search, scrape, and digest the web.")
+out = Console()
 
+
+@click.group()
+def app():
+    """Search, scrape, and digest the web."""
 
 
 @app.command("search")
-def search_cmd(
-    queries: list[str],
-    limit: int = 10,
-    engines: str | None = None,
-    quick: bool = typer.Option(False, "--quick", help="Print snippets only, no scraping"),
-    copy: bool = typer.Option(True, "--no-copy", help="Skip copying digest to clipboard"),
-    analyze_with_llm: bool = typer.Option(False, "--analyze-with-llm", help="Extract relevant info with local LLM"),
-):
-    """Search 1+ queries, scrape and save. --quick for snippets only."""
+@click.argument("queries", nargs=-1, required=True)
+@click.option("--limit", default=10, help="Max results per query")
+@click.option("--engines", default=None, help="SearXNG engines to use")
+@click.option("--quick", is_flag=True, help="Print snippets only, no scraping")
+@click.option("--no-copy", is_flag=True, help="Skip copying digest to clipboard")
+def search_cmd(queries, limit, engines, quick, no_copy):
+    """Search 1+ queries, scrape and save."""
     all_results = []
     for q in queries:
         results = dedup(search(q, limit, engines))
@@ -48,10 +53,10 @@ def search_cmd(
 
     if quick:
         for i, r in enumerate(unique, 1):
-            print(f"### {i}. {r['title']}")
-            print(f"URL: {r['url']}")
-            print(f"{r.get('content', '')}")
-            print()
+            out.print(f"[bold]### {i}. {r['title']}[/bold]")
+            out.print(f"[dim]{r['url']}[/dim]")
+            out.print(r.get("content", ""))
+            out.print()
         return
 
     async def _run():
@@ -59,14 +64,13 @@ def search_cmd(
         pages, scrape_log = await scrape_urls(urls)
         entries, proc_log = process_pages(unique, pages)
 
-        # content-level dedup (removes near-duplicate pages)
         before_dedup = len(entries)
         entries = deduplicate(entries)
         dedup_removed = before_dedup - len(entries)
 
         query_str = queries[0] if len(queries) == 1 else " ".join(queries)
         data = {
-            "queries": queries,
+            "queries": list(queries),
             "mode": "search",
             "timestamp": datetime.now().isoformat(),
             "log": {**scrape_log, **proc_log, "total": len(unique), "dedup_removed": dedup_removed},
@@ -77,7 +81,7 @@ def search_cmd(
         save(data, out_file)
         _summary(scrape_log, proc_log, entries)
 
-        if copy:
+        if not no_copy:
             import subprocess
             text = digest(out_file)
             txt_file = out_file.replace(".json", ".txt")
@@ -95,64 +99,110 @@ def search_cmd(
 
 
 @app.command()
-def scrape(url: str):
+@click.argument("url")
+def scrape(url):
     """Scrape a single URL and print clean text."""
     async def _run():
         pages, _ = await scrape_urls([rewrite_url(url)])
         page = pages[0] if pages else None
         if page is None or isinstance(page, Exception):
             error(f"Error: {page}")
-            raise typer.Exit(1)
+            sys.exit(1)
         from lib.scrape import extract_content
         html = getattr(page, "html", None)
         text = extract_content(html) if html else None
         if text:
-            print(text)
+            out.print(text)
         else:
             error("No content extracted")
-            raise typer.Exit(1)
+            sys.exit(1)
 
     asyncio.run(_run())
 
 
-@app.command()
-def digest_cmd(
-    file: str | None = typer.Argument(None),
-    raw: bool = False,
-):
+@app.command("digest")
+@click.argument("file", required=False)
+@click.option("--raw", is_flag=True, help="Print raw digest text")
+def digest_cmd(file, raw):
     """Extract clean text from research file for LLM."""
     path = file if file and os.path.isfile(file) else find_latest()
     if not path:
         error("No research files in output/")
-        raise typer.Exit(1)
+        sys.exit(1)
 
     if raw:
-        print(digest(path))
+        out.print(digest(path))
         return
 
     s = stats(path)
-    info(f"File:   {s['file']}")
-    info(f"Query:  {s['query']}")
+    info(f"[bold]File:[/bold]   {s['file']}")
+    info(f"[bold]Query:[/bold]  {s['query']}")
     filtered = s.get('filtered', 0)
     pages_str = f"{s['usable']}/{s['total']}"
     if filtered:
         pages_str += f" ({filtered} filtered as low quality)"
-    info(f"Pages:  {pages_str}")
-    info(f"Tokens: ~{s['tokens']:,}")
+    info(f"[bold]Pages:[/bold]  {pages_str}")
+    info(f"[bold]Tokens:[/bold] ~{s['tokens']:,}")
 
-    if typer.confirm("\nSend to stdout?", default=False):
-        print(digest(path))
+    if click.confirm("\nSend to stdout?", default=False):
+        out.print(digest(path))
     else:
         info("Aborted.")
 
 
 @app.command()
+@click.argument("file", required=False)
+@click.option("--index", "-i", default=0, help="Page index to preview")
+def preview(file, index):
+    """Render a scraped page as clean markdown."""
+    from lib.render import html_to_markdown
+
+    path = file if file and os.path.isfile(file) else find_latest()
+    if not path:
+        error("No research files in output/")
+        sys.exit(1)
+
+    with open(path) as f:
+        data = json.load(f)
+
+    results = data["results"]
+    if index >= len(results):
+        error(f"Index {index} out of range (0-{len(results) - 1})")
+        sys.exit(1)
+
+    r = results[index]
+    q = r.get("quality", {})
+
+    out.print(f"[bold]# {r.get('title', 'Untitled')}[/bold]")
+    out.print()
+    out.print(f"[dim]{r['url']}[/dim]")
+    out.print()
+    score = q.get("score", "?")
+    rel = q.get("relevance", 0.0)
+    ptype = q.get("page_type", "unknown")
+    out.print(f"[cyan]quality:[/cyan] {score}/100 | [cyan]relevance:[/cyan] {rel} | [cyan]type:[/cyan] {ptype}")
+    flags = q.get("flags", [])
+    if flags:
+        out.print(f"[cyan]flags:[/cyan] {', '.join(flags)}")
+    out.print()
+    out.print("[dim]---[/dim]")
+    out.print()
+
+    html = r.get("html")
+    if html:
+        out.print(html_to_markdown(html, r.get("url", "")))
+    else:
+        out.print(r.get("content") or "No content extracted.")
+
+
+@app.command("update-blocklist")
 def update_blocklist():
-    """Download and update domain blocklists from configured sources."""
+    """Download and update domain blocklists."""
     from lib.domain_filter import domain_filter
     domain_filter.update()
 
-def _summary(scrape_log: dict, proc_log: dict, entries: list[dict]):
+
+def _summary(scrape_log, proc_log, entries):
     chars = sum(len(e.get("content") or "") for e in entries if e.get("content") and len(e["content"]) > 50)
     tokens = chars // 4
     parts = [f"{proc_log['scraped']} scraped"]
@@ -166,7 +216,3 @@ def _summary(scrape_log: dict, proc_log: dict, entries: list[dict]):
         warn(msg)
     else:
         done(msg)
-
-
-if __name__ == "__main__":
-    app()

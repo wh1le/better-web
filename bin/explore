@@ -42,35 +42,6 @@ for i, r in enumerate(d['results']):
 [ -z "$PAGE_IDX" ] && exit 0
 
 # --- step 3: render page as clean markdown, open in editor ---
-poetry run python3 -c "
-import json
-with open('$SESSION') as f:
-    d = json.load(f)
-r = d['results'][$PAGE_IDX]
-q = r.get('quality', {})
-score = q.get('score', '?')
-rel = q.get('relevance', 0.0)
-ptype = q.get('page_type', 'unknown')
-flags = ', '.join(q.get('flags', []))
-
-print(f'# {r.get(\"title\", \"Untitled\")}')
-print()
-print(f'{r[\"url\"]}')
-print()
-print(f'quality: {score}/100 | relevance: {rel} | type: {ptype}')
-if flags:
-    print(f'flags: {flags}')
-print()
-print('---')
-print()
-
-# use readability + markdownify if raw HTML is saved, otherwise fall back to trafilatura text
-html = r.get('html')
-if html:
-    from lib.render import html_to_markdown
-    print(html_to_markdown(html, r.get('url', '')))
-else:
-    print(r.get('content') or 'No content extracted.')
-" > "$TMPFILE"
+bw preview "$SESSION" --index "$PAGE_IDX" > "$TMPFILE"
 
 $EDITOR "$TMPFILE"

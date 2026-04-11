@@ -46,7 +46,7 @@ poetry install
 playwright install chromium
 ```
 
-Configure your SearXNG URL in `config.toml` under `[searx]` (default `http://localhost:8882/search`).
+Configure your SearXNG URL in `config.yaml` under `searx_engine` (default `http://localhost:8882/search`).
 
 ## Usage
 
@@ -55,8 +55,10 @@ bw search "query"                     # search + scrape + score + copy
 bw search "q1" "q2" --limit 20       # multi-query batch
 bw search --quick "query"             # snippets only, no scraping
 bw scrape "https://example.com"       # single URL to stdout
-bw digest-cmd --raw                   # re-export latest research
+bw digest --raw                       # re-export latest research
+bw preview                            # render page as clean markdown
 bw update-blocklist                   # refresh domain blocklists
+bin/explore                           # fzf picker -> preview in editor
 bin/agent                             # fzf picker -> copy/claude
 ```
 
@@ -96,7 +98,7 @@ quality: 72/100 | relevance: 0.81 | type: article
 
 ## Config
 
-`config.toml` — SearXNG URL, scrape timing, quality threshold, blocklist sources. See file for details.
+`config.yaml` — SearXNG URL, scrape timing, quality thresholds, blocklist sources. Static lists (TLDs, blocked domains, AI phrases) live in `data/*.txt`.
 
 ## TODO
 

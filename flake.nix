@@ -36,6 +36,7 @@
         pkgs.xorg.libXfixes
         pkgs.xorg.libXrandr
         pkgs.at-spi2-core
+        pkgs.fzf
       ];
     in
     {

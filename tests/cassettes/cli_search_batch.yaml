@@ -1,0 +1,2440 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - searx:8888
+      User-Agent:
+      - Python-urllib/3.13
+    method: GET
+    uri: http://searx:8888/search?q=how+does+the+human+gut+microbiome+affect+mental+health&format=json&pageno=1
+  response:
+    body:
+      string: '{"query": "how does the human gut microbiome affect mental health",
+        "number_of_results": 0, "results": [{"template": "default.html", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5641835/",
+        "title": "Gut microbiota\u2019s effect on mental health: The gut-brain axis
+        - PMC", "content": "It has also been shown that short chain fatty acids offer
+        relevant benefits in terms of regulatory T cell induction as well as blood-brain
+        barrier integrity.28,29 In contrast, the LGC group had a larger proportion
+        of pro-inflammatory bacteria which predisposed them to IBD and related disorders.30,31
+        The Human Microbiome Project confirms this notion with studies of stool specimens
+        demonstrating that humans with a less diverse microbiome were more likely
+        to be diagnosed with IBD.25", "publishedDate": null, "thumbnail": "", "engine":
+        "brave", "parsed_url": ["https", "pmc.ncbi.nlm.nih.gov", "/articles/PMC5641835/",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["startpage", "brave"],
+        "positions": [2, 1], "score": 3.0, "category": "general"}, {"template": "default.html",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10384867/", "title": "The
+        Role of Gut Microbiota in Anxiety, Depression, and Other Mental Disorders
+        as Well as the Protective Effects of Dietary Components - PMC", "content":
+        "At the genus level, several gut microbiota genera were positively correlated
+        with anxiety, such as Prevotella, Lactobacillales, Sellimonas, Streptococcus,
+        and Enterococcus, while some gut microbiota genera were inversely correlated
+        with anxiety, suggesting that targeting these gut microbiomes ...", "publishedDate":
+        null, "thumbnail": "", "engine": "brave", "parsed_url": ["https", "pmc.ncbi.nlm.nih.gov",
+        "/articles/PMC10384867/", "", "", ""], "img_src": "", "priority": "", "engines":
+        ["brave"], "positions": [1], "score": 1.0, "category": "general"}, {"template":
+        "default.html", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6882070/",
+        "title": "The Gut Microbiome and Mental Health: What Should We Tell Our Patients?:
+        Le microbiote Intestinal et la Sant\u00e9 Mentale : que Devrions-Nous dire
+        \u00e0 nos Patients? - PMC", "content": "The gut microbiome as a potential
+        therapeutic target for mental illness is a hot topic in psychiatry. Trillions
+        of bacteria reside in the human gut and have been shown to play a crucial
+        role in gut\u2013brain communication through an influence on neural, immune,
+        and endocrine pathways.", "publishedDate": null, "thumbnail": "", "engine":
+        "brave", "parsed_url": ["https", "pmc.ncbi.nlm.nih.gov", "/articles/PMC6882070/",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["startpage", "brave"],
+        "positions": [6, 3], "score": 1.0, "category": "general"}, {"url": "https://hms.harvard.edu/news/drawing-line-gut-microbiome-inflammation-depression",
+        "title": "Drawing a Line From the Gut Microbiome to Inflammation and ...",
+        "content": "Jan 21, 2025 ... It''s become increasingly clear that the gut
+        microbiome can affect human health, including mental health. Which bacterial
+        species influence\u00a0...", "publishedDate": null, "engine": "startpage",
+        "template": "default.html", "parsed_url": ["https", "hms.harvard.edu", "/news/drawing-line-gut-microbiome-inflammation-depression",
+        "", "", ""], "img_src": "", "thumbnail": "", "priority": "", "engines": ["startpage"],
+        "positions": [2], "score": 0.5, "category": "general"}, {"template": "default.html",
+        "url": "https://www.reddit.com/r/askscience/comments/yuytf5/does_your_gutgastrointestinaldigestive_health/",
+        "title": "Does your gut/gastrointestinal/digestive health affect how you feel
+        mentally/psychologically?", "content": "Gluten sensitivity linked to symptoms
+        of schizophrenia, autism, and depression Gut microbiome plays a role in stress
+        response, anxiety, and depression In general, studies right now are still
+        stating further research is needed, but the evidence so far does show a definite
+        link between gut health and mental health. There''s also a bigger overall
+        link between general physical health and better mental health. Physical exercise
+        linked to better outcomes for (non-bipolar) forms of depression Physical exercise
+        leads to better outcomes for youth with autism (Succesfully) quitting smoking
+        improves mental health Really there''s quite a lot to find on this. More on
+        reddit.com", "publishedDate": null, "thumbnail": "", "engine": "brave", "parsed_url":
+        ["https", "www.reddit.com", "/r/askscience/comments/yuytf5/does_your_gutgastrointestinaldigestive_health/",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [3], "score": 0.3333333333333333, "category": "general"}, {"url": "https://www.optum.com/en/health-articles.html/healthy-mind/surprising-link-between-your-microbiome-and-mental-health",
+        "title": "The Surprising Link Between Gut Health And Mental Health - Optum",
+        "content": "Your gut microbiome is also known as your gastrointestinal (GI)
+        tract. The state of your microbiome can even raise or lower your chances of
+        depression and\u00a0...", "publishedDate": null, "engine": "startpage", "template":
+        "default.html", "parsed_url": ["https", "www.optum.com", "/en/health-articles.html/healthy-mind/surprising-link-between-your-microbiome-and-mental-health",
+        "", "", ""], "img_src": "", "thumbnail": "", "priority": "", "engines": ["startpage"],
+        "positions": [6], "score": 0.16666666666666666, "category": "general"}, {"template":
+        "default.html", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12993674/",
+        "title": "The gut\u2013brain connection: microbes\u2019 influence on mental
+        health and psychological disorders - PMC", "content": "The gut microbiota
+        influences mental health through multiple interconnected pathways, including
+        immune regulation and stress response modulation (Merlo et al., 2024). These
+        mechanisms help explain how microbial composition affects brain function,
+        behavior, and psychological well-being.", "publishedDate": null, "thumbnail":
+        "", "engine": "brave", "parsed_url": ["https", "pmc.ncbi.nlm.nih.gov", "/articles/PMC12993674/",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [9], "score": 0.1111111111111111, "category": "general"}, {"url": "https://www.bbc.com/future/article/20230120-how-gut-bacteria-are-controlling-your-brain",
+        "title": "How gut bacteria are controlling your brain - BBC", "content": "Jan
+        22, 2023 ... \"More and more research is revealing that the gut microbiome
+        can influence the brain and behaviour across a variety of different animals,\"
+        says\u00a0...", "publishedDate": null, "engine": "startpage", "template":
+        "default.html", "parsed_url": ["https", "www.bbc.com", "/future/article/20230120-how-gut-bacteria-are-controlling-your-brain",
+        "", "", ""], "img_src": "", "thumbnail": "", "priority": "", "engines": ["startpage"],
+        "positions": [10], "score": 0.1, "category": "general"}, {"template": "default.html",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12038870/", "title": "Gut
+        Microbiota and Mental Health: A Comprehensive Review ...", "content": "Checking
+        your browser before accessing pmc.ncbi.nlm.nih.gov \u00b7 Click here if you
+        are not automatically redirected after 5 seconds", "publishedDate": null,
+        "thumbnail": "", "engine": "brave", "parsed_url": ["https", "pmc.ncbi.nlm.nih.gov",
+        "/articles/PMC12038870/", "", "", ""], "img_src": "", "priority": "", "engines":
+        ["brave"], "positions": [13], "score": 0.07692307692307693, "category": "general"},
+        {"template": "default.html", "url": "https://www.frontiersin.org/journals/microbiomes/articles/10.3389/frmbi.2025.1701608/full",
+        "title": "Frontiers | The gut\u2013brain connection: microbes\u2019 influence
+        on mental health and psychological disorders", "content": "The gut microbiota
+        influences mental health through multiple interconnected pathways, including
+        immune regulation and stress response modulation (Merlo et al., 2024). These
+        mechanisms help explain how microbial composition affects brain function,
+        ...", "publishedDate": "2025-12-03T00:00:00", "thumbnail": "https://imgs.search.brave.com/2ioMI_NdHhoZCcGZTQXdSkXQEr-zxFoCWfzOdI2b0fo/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9kMmNz/eHBkdXhlODQ5cy5j/bG91ZGZyb250Lm5l/dC9tZWRpYS9FMzI2/MjlDNi05MzQ3LTRG/ODQtODFGRUFFRjdC/RkEzNDJCMy9FNUY4/RDg4Qi0xNTY1LTRG/QjUtODBDQzRGNTQ5/QkUzOERENS9GQ0NC/REMwNy02NDBGLTQ3/QzQtQjEyRDg2RkIw/MTk2NjM5Qi9XZWJz/aXRlV2ViUF9YTC1G/Uk1CSV9NYWluIFZp/c3VhbF9HcmVlbl9X/ZWJzaXRlLndlYnA",
+        "engine": "brave", "parsed_url": ["https", "www.frontiersin.org", "/journals/microbiomes/articles/10.3389/frmbi.2025.1701608/full",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["startpage", "brave"],
+        "positions": [7, 4], "score": 0.7857142857142857, "category": "general", "pubdate":
+        "2025-12-03 00:00:00"}, {"template": "default.html", "url": "https://www.cas.org/resources/cas-insights/how-your-gut-microbiome-linked-depression-and-anxiety",
+        "title": "How your gut microbiome is linked to depression and anxiety | CAS",
+        "content": "Gut bacteria have been linked to ... and patients with various
+        psychiatric disorders such as depression, bipolar disorder, schizophrenia,
+        and autism have been found to have significant alterations in the composition
+        of their gut microorganisms...", "publishedDate": "2024-06-30T00:00:00", "thumbnail":
+        "https://imgs.search.brave.com/UrVSwKOIXCLPlYlX876oWvQe6nrhegd5niKQDfBcCs4/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS82/NTA4Njc5NjIyNzJi/ZjhmMTVjMTAzNGIv/NjU5ZTlkMDYxOTA0/NzgyYmY0MWM2Y2Q5/X2d1dC1taWNyb2Jp/b21lLWhlcm8tdGh1/bWJuYWlsLmF2aWY",
+        "engine": "brave", "parsed_url": ["https", "www.cas.org", "/resources/cas-insights/how-your-gut-microbiome-linked-depression-and-anxiety",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["startpage", "brave"],
+        "positions": [8, 5], "score": 0.65, "category": "general", "pubdate": "2024-06-30
+        00:00:00"}, {"template": "default.html", "url": "https://www.sciencedirect.com/science/article/abs/pii/S1876201824001618",
+        "title": "Microbiota-brain axis: Exploring the role of gut microbiota in psychiatric
+        disorders - A comprehensive review - ScienceDirect", "content": "This review
+        explores the mechanisms by which gut microbiota influences mental health,
+        encompassing the modulation of neurotransmitter production, neuroinflammation,
+        and integrity of the gut barrier. In addition, it emphasizes a thorough understanding
+        of how the gut microbiome affects various psychiatric conditions. Humans are
+        often referred to as \u201csuperorganisms\u201d because of the presence of
+        diverse microorganisms in their bodies.", "publishedDate": "2024-05-07T00:00:00",
+        "thumbnail": "https://imgs.search.brave.com/sqxg31k5v6bdIp96h6DnvYnk41Q-AKPdQjYsTUilTPM/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hcnMu/ZWxzLWNkbi5jb20v/Y29udGVudC9pbWFn/ZS8xLXMyLjAtUzE4/NzYyMDE4MjRYMDAw/NjQtY292MTUwaC5n/aWY.jpeg",
+        "engine": "brave", "parsed_url": ["https", "www.sciencedirect.com", "/science/article/abs/pii/S1876201824001618",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["startpage", "brave"],
+        "positions": [5, 9], "score": 0.6222222222222222, "category": "general", "pubdate":
+        "2024-05-07 00:00:00"}, {"template": "default.html", "url": "https://www.nature.com/articles/d41586-025-02633-4",
+        "title": "Why nurturing the gut microbiota could resolve depression and anxiety",
+        "content": "Researchers have also been investigating whether alterations of
+        the microbiota through diet can be leveraged to improve mental health. A study
+        published in 2017, by a team in Australia, found that an intervention based
+        on a Mediterranean diet reduced symptoms in people with depression6. \u201cDietary
+        changes affect the broader microbial ecosystem,\u201d says Marx, partly because
+        it introduces many compounds that microbes feed on, known as prebiotics.",
+        "publishedDate": "2025-08-18T00:00:00", "thumbnail": "https://imgs.search.brave.com/4-w1F-NVgQYODqxlSIYaoHi6t-P-NR1Nk3uYY6WYwhY/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5uYXR1cmUuY29t/L2x3MTIwMC9tYWdh/emluZS1hc3NldHMv/ZDQxNTg2LTAyNS0w/MjYzMy00L2Q0MTU4/Ni0wMjUtMDI2MzMt/NF81MTMxOTg0Mi5q/cGc",
+        "engine": "brave", "parsed_url": ["https", "www.nature.com", "/articles/d41586-025-02633-4",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["startpage", "brave"],
+        "positions": [10, 7], "score": 0.4857142857142857, "category": "general",
+        "pubdate": "2025-08-18 00:00:00"}, {"template": "default.html", "url": "https://www.npr.org/sections/shots-health-news/2024/06/24/nx-s1-5018044/gut-microbiome-microbes-mental-health-stress",
+        "title": "Gut microbiome is linked to how we handle stress in new study :
+        Shots - Health News : NPR", "content": "Jun 24, 2024 ... An illustration of
+        the human microbiome. The bacteria in our gut may influence our mental health,
+        research finds.", "publishedDate": "2024-06-25T00:00:00", "thumbnail": "https://imgs.search.brave.com/hHl3CC66wdtK5tNA8-V6vkY0z6mBtgl6VU84RwzZV34/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9ucHIu/YnJpZ2h0c3BvdGNk/bi5jb20vZGltczMv/ZGVmYXVsdC9zdHJp/cC9mYWxzZS9jcm9w/LzE3MzJ4MTI5OSsw/KzQzMy9yZXNpemUv/MTczMngxMjk5IS8_/dXJsPWh0dHAlM0El/MkYlMkZucHItYnJp/Z2h0c3BvdC5zMy5h/bWF6b25hd3MuY29t/JTJGZDUlMkYxMSUy/RjRlMzU5MTg4NDRl/N2I3MzM5YzNhMGFj/MmRkMzklMkZnZXR0/eWltYWdlcy0xMTI4/Njc3NDE2LmpwZw",
+        "engine": "brave", "parsed_url": ["https", "www.npr.org", "/sections/shots-health-news/2024/06/24/nx-s1-5018044/gut-microbiome-microbes-mental-health-stress",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["startpage", "brave"],
+        "positions": [20, 8], "score": 0.35, "category": "general", "pubdate": "2024-06-25
+        00:00:00"}, {"template": "default.html", "url": "https://www.brainfacts.org/thinking-sensing-and-behaving/diet-and-lifestyle/2024/the-growing-link-between-microbes-mood-and-mental-health-062724",
+        "title": "The Growing Link Between Microbes, Mood, and Mental Health", "content":
+        "Our immune system is also completely shaped by microbial signals. Via that
+        route, inflammation in our gut can affect our mood and cause symptoms of sickness
+        behavior that are quite similar to important aspects of depression and anxiety.",
+        "publishedDate": "2024-06-27T00:00:00", "thumbnail": "https://imgs.search.brave.com/I0AomaURsJRYiJd3SDO3sopkdkkghx1S10fYnx-5YhI/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YnJhaW5mYWN0cy5v/cmcvLS9tZWRpYS9C/cmFpbmZhY3RzMi9U/aGlua2luZy1TZW5z/aW5nLWFuZC1CZWhh/dmluZy9EaWV0LWFu/ZC1MaWZlc3R5bGUv/QXJ0aWNsZS1JbWFn/ZXMvR3V0LWJyYWlu/LW1vb2QuanBn",
+        "engine": "brave", "parsed_url": ["https", "www.brainfacts.org", "/thinking-sensing-and-behaving/diet-and-lifestyle/2024/the-growing-link-between-microbes-mood-and-mental-health-062724",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [4], "score": 0.25, "category": "general", "pubdate": "2024-06-27 00:00:00"},
+        {"template": "default.html", "url": "https://www.synlab-sd.com/en/blog/health-and-wellness-en/gut-microbiome-and-depression-how-gut-health-can-impact-mental-health/",
+        "title": "Gut Microbiome and Depression: How Gut Health Can Impact Mental
+        Health - Synlab Intestinal Microbiota and Depression: Understanding the Impacts",
+        "content": "Feedback between microbiota and ... where chronic depressive behaviors
+        can alter the composition of the gut microbiome, and these changes may, in
+        turn, influence the development or worsening of depression (16, ...", "publishedDate":
+        "2025-09-02T00:00:00", "thumbnail": "https://imgs.search.brave.com/nLHGuKfYInGCPq7OD2ng5_NgJgDfmniBBfxSkEDhCHo/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/c3lubGFiLXNkLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NC8wOS9pbmdsZXMt/MzAweDE4Ni0xMjAw/eDY3NS5wbmc",
+        "engine": "brave", "parsed_url": ["https", "www.synlab-sd.com", "/en/blog/health-and-wellness-en/gut-microbiome-and-depression-how-gut-health-can-impact-mental-health/",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [11], "score": 0.09090909090909091, "category": "general", "pubdate": "2025-09-02
+        00:00:00"}, {"template": "default.html", "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1215674/full",
+        "title": "Frontiers | Association between gut microbiota and psychiatric disorders:
+        a systematic review", "content": "Alterations in the human gut microbiota
+        composition have been linked with mood disorders and neuropsychiatric disorders
+        (Huang et al., 2019) and, in turn, with neurotransmitters imbalances (Frankiensztajn
+        et al., 2020).", "publishedDate": "2023-07-24T00:00:00", "thumbnail": "https://imgs.search.brave.com/r30HEs49cA1GU6r4IwoI0hf-K0E5xwKE235rtzDEb2k/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtcHJvdmlkZXIu/ZnJvbnRpZXJzaW4u/b3JnL2FwaS9pcHgv/dz0xMjAwJmY9cG5n/L2h0dHBzOi8vd3d3/LmZyb250aWVyc2lu/Lm9yZy9maWxlcy9B/cnRpY2xlcy8xMjE1/Njc0L2Zwc3lnLTE0/LTEyMTU2NzQtSFRN/TC9pbWFnZV9tL2Zw/c3lnLTE0LTEyMTU2/NzQtZzAwMS5qcGc",
+        "engine": "brave", "parsed_url": ["https", "www.frontiersin.org", "/journals/psychology/articles/10.3389/fpsyg.2023.1215674/full",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [12], "score": 0.08333333333333333, "category": "general", "pubdate": "2023-07-24
+        00:00:00"}, {"template": "default.html", "url": "https://www.science.org/content/article/meet-psychobiome-gut-bacteria-may-alter-how-you-think-feel-and-act",
+        "title": "Meet the \u2018psychobiome'': the gut bacteria that may alter how
+        you think, feel, and act | Science | AAAS", "content": "icrobes or the body''s
+        own cells can convert tryptophan into serotonin, a neurotransmitter implicated
+        in depression and other psychiatric disorders. Cells also turn tryptophan
+        into a substance called kynurenine, which reacts further to form ...", "publishedDate":
+        "2020-05-07T00:00:00", "thumbnail": "https://imgs.search.brave.com/FxZOMgBv3nahsD4wUk6voNl9hEQ3fLLrY7NFCRwGzLY/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/c2NpZW5jZS5vcmcv/Y21zL2Fzc2V0LzVl/MDg3NTNkLTkzZjEt/NGRlZi1iYzg3LTIz/YTU4MzVlYTAzNy9t/YV8wNTA4X25mX2hv/bG9iaW9tZV9wZXRy/aWRpc2hfMTI4MHg3/MjAuanBn",
+        "engine": "brave", "parsed_url": ["https", "www.science.org", "/content/article/meet-psychobiome-gut-bacteria-may-alter-how-you-think-feel-and-act",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [14], "score": 0.07142857142857142, "category": "general", "pubdate": "2020-05-07
+        00:00:00"}, {"template": "default.html", "url": "https://www.nature.com/articles/s41598-024-53929-w",
+        "title": "Systematic identification of the role of gut microbiota in mental
+        disorders: a TwinsUK cohort study | Scientific Reports", "content": "Specific
+        microbiota imbalances seem to affect mental health status. However, the mechanisms
+        by which microbiota disturbances impact the presence of depression, stress,
+        anxiety, and ...", "publishedDate": "2024-02-13T00:00:00", "thumbnail": "https://imgs.search.brave.com/XYQbp6HVtP8m4iyYkzbhPz2wdKLSBJXKT8NLx9Hcqwg/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5zcHJpbmdlcm5h/dHVyZS5jb20vbTY4/NS9zcHJpbmdlci1z/dGF0aWMvaW1hZ2Uv/YXJ0JTNBMTAuMTAz/OCUyRnM0MTU5OC0w/MjQtNTM5Mjktdy9N/ZWRpYU9iamVjdHMv/NDE1OThfMjAyNF81/MzkyOV9GaWcxX0hU/TUwucG5n",
+        "engine": "brave", "parsed_url": ["https", "www.nature.com", "/articles/s41598-024-53929-w",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [15], "score": 0.06666666666666667, "category": "general", "pubdate": "2024-02-13
+        00:00:00"}, {"template": "default.html", "url": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1337889/full",
+        "title": "Frontiers | Gut microbiota, nutrition, and mental health", "content":
+        "The gut-brain Axis: influence of microbiota on mood and mental health. Integr
+        Med (Encinitas). (2018) 17:28\u201332. PMID: ... ChakrabartiAGeurtsLHoylesLIozzoPKraneveldADLa
+        FataGet al. The microbiota-gut-brain axis: pathways to better brain health.
+        Perspectives on what we know, what we need to investigate and how to put knowledge
+        into practice. Cell Mol Life Sci. (2022) 79:80. doi: 10.1007/s00018-021-04060-w
+        ... DashSSyedYAKhanMR. Understanding the role of the gut microbiome in brain
+        development and its association with neurodevelopmental psychiatric disorders.",
+        "publishedDate": "2024-01-24T00:00:00", "thumbnail": "https://imgs.search.brave.com/Ol2WCULlyZrcF2KAaDPASk6YquB-Dhf-Up0eGSEcv9Y/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtcHJvdmlkZXIu/ZnJvbnRpZXJzaW4u/b3JnL2FwaS9pcHgv/dz0xMjAwJmY9cG5n/L2h0dHBzOi8vd3d3/LmZyb250aWVyc2lu/Lm9yZy9maWxlcy9B/cnRpY2xlcy8xMzM3/ODg5L2ZudXQtMTEt/MTMzNzg4OS1IVE1M/LXIxL2ltYWdlX20v/Zm51dC0xMS0xMzM3/ODg5LWcwMDEuanBn",
+        "engine": "brave", "parsed_url": ["https", "www.frontiersin.org", "/journals/nutrition/articles/10.3389/fnut.2024.1337889/full",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [16], "score": 0.0625, "category": "general", "pubdate": "2024-01-24 00:00:00"},
+        {"template": "default.html", "url": "https://news.llu.edu/health-wellness/turns-out-your-gut-feelings-are-real-how-gut-and-mental-health-are-connected",
+        "title": "Turns out your \u2018gut feelings\u2019 are real. How gut and mental
+        health are connected | News", "content": "Serotonin, known as the \"happy
+        ... Scharf says disruptions in the gut microbiota can interfere with the production
+        and signaling of these neurotransmitters, contributing to mental health disorders....",
+        "publishedDate": "2023-07-27T00:00:00", "thumbnail": "https://imgs.search.brave.com/VIEJzr2mA5fd4KiVrE5Rt5CflV9KVxjf6e1vrpdlCUU/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9uZXdz/LmxsdS5lZHUvc2l0/ZXMvbmV3cy5sbHUu/ZWR1L2ZpbGVzL3N0/eWxlcy9vZ19pbWFn/ZS9wdWJsaWMvR2V0/dHlJbWFnZXMtMTM4/ODc5Mzg5MC5qcGc_/aXRvaz1YOVpqN1RO/Nw",
+        "engine": "brave", "parsed_url": ["https", "news.llu.edu", "/health-wellness/turns-out-your-gut-feelings-are-real-how-gut-and-mental-health-are-connected",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [17], "score": 0.058823529411764705, "category": "general", "pubdate": "2023-07-27
+        00:00:00"}, {"template": "default.html", "url": "https://www.sciencedirect.com/science/article/pii/S0959438820300362",
+        "title": "The gut microbiota and mental health in adults - ScienceDirect",
+        "content": "A growing body of evidence point toward the bidirectional gut
+        microbiota\u2013brain axis playing a role in mental health. Most of this research
+        is conducted on animals why we in this review summarize and comment upon recent
+        studies evaluating the gut microbiome in mental health in humans.", "publishedDate":
+        "2020-03-09T00:00:00", "thumbnail": "https://imgs.search.brave.com/l8PMCDFXtYXidUvp8PVKVFW98piYwX8Bj9bcG5O8eVE/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hcnMu/ZWxzLWNkbi5jb20v/Y29udGVudC9pbWFn/ZS8xLXMyLjAtUzA5/NTk0Mzg4MTlYMDAw/NjktY292MTUwaC5n/aWY.jpeg",
+        "engine": "brave", "parsed_url": ["https", "www.sciencedirect.com", "/science/article/pii/S0959438820300362",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [18], "score": 0.05555555555555555, "category": "general", "pubdate": "2020-03-09
+        00:00:00"}, {"template": "default.html", "url": "https://www.cureus.com/articles/344484-gut-microbiota-and-mental-health-a-comprehensive-review-of-gut-brain-interactions-in-mood-disorders",
+        "title": "Gut Microbiota and Mental Health: A Comprehensive Review of Gut-Brain
+        Interactions in Mood Disorders | Cureus", "content": "The human gut flora
+        of trillions of bacteria is vital for general health and greatly influences
+        digestion, immune system function, and brain development. Through neuronal,
+        hormonal, and immunological channels, the gut-brain axis (GBA), a bidirectional
+        communication network, links the gut microbiota to the central nervous system
+        (CNS).", "publishedDate": "2025-03-30T00:00:00", "thumbnail": "https://imgs.search.brave.com/pY2iMHgybHb_gEQ-LthBAm7r-vIVeGAgui6RbC8CqL0/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuY3VyZXVzLmNv/bS91cGxvYWRzL2Zp/Z3VyZS9maWxlLzE0/MDI4NDgvYXJ0aWNs/ZV9yaXZlcl83MzVh/Y2YwMGU5MTkxMWVm/YjNhYzUzZmYzYzk2/ZjM4Ny1GaWd1cmUt/MS5wbmc",
+        "engine": "brave", "parsed_url": ["https", "www.cureus.com", "/articles/344484-gut-microbiota-and-mental-health-a-comprehensive-review-of-gut-brain-interactions-in-mood-disorders",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [21], "score": 0.047619047619047616, "category": "general", "pubdate": "2025-03-30
+        00:00:00"}, {"template": "default.html", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11865252/",
+        "title": "Understanding the Impact of the Gut Microbiome on Mental Health:
+        A Systematic Review - PMC", "content": "This imbalance causes dysregulation
+        in critical bodily functions, including immune activation and neurotransmitter
+        production, to the extent of neuroinflammation and the resulting onset of
+        mental health disorders, such as depression and anxiety. Addressing dysbiosis
+        is a promising avenue for ...", "publishedDate": null, "thumbnail": "", "engine":
+        "brave", "parsed_url": ["https", "pmc.ncbi.nlm.nih.gov", "/articles/PMC11865252/",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [19], "score": 0.05263157894736842, "category": "general"}], "answers": [],
+        "corrections": [], "infoboxes": [], "suggestions": [], "unresponsive_engines":
+        [["duckduckgo", "CAPTCHA"], ["google", "Suspended: access denied"]]}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '25065'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 11 Apr 2026 01:23:36 GMT
+      Referrer-Policy:
+      - no-referrer
+      Server:
+      - Werkzeug/3.1.4 Python/3.13.12
+      Server-Timing:
+      - total;dur=794.932, render;dur=0, total_0_wikipedia;dur=270.798, total_1_brave;dur=581.265,
+        total_2_startpage;dur=792.655, load_0_wikipedia;dur=269.969, load_1_brave;dur=565.722,
+        load_2_startpage;dur=785.078
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Robots-Tag:
+      - noindex, nofollow
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - searx:8888
+      User-Agent:
+      - Python-urllib/3.13
+    method: GET
+    uri: http://searx:8888/search?q=gut+brain+axis+serotonin+production+explained&format=json&pageno=1
+  response:
+    body:
+      string: '{"query": "gut brain axis serotonin production explained", "number_of_results":
+        0, "results": [{"template": "default.html", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6469458/",
+        "title": "The Gut-Brain Axis: Influence of Microbiota on Mood and Mental Health
+        - PMC", "content": "Furthermore, microbiota-derived ... communication and
+        function.21-24 SCFAs also regulate the release of gut peptides from enteroendocrine
+        cells and have been shown to regulate the synthesis of gut-derived serotonin
+        from enterochromaffin cells, both of which in turn affect gut\u2013brain ...",
+        "publishedDate": null, "thumbnail": "", "engine": "brave", "parsed_url": ["https",
+        "pmc.ncbi.nlm.nih.gov", "/articles/PMC6469458/", "", "", ""], "img_src": "",
+        "priority": "", "engines": ["startpage", "brave"], "positions": [1, 1], "score":
+        4.0, "category": "general"}, {"template": "default.html", "url": "https://www.reddit.com/r/biology/comments/18ouunq/they_say_95_of_serotonin_is_made_in_the_gut_so/",
+        "title": "They say 95% of serotonin is made in the gut, so what does this
+        mean in real terms and how accurate is this or is it buzz stats?", "content":
+        "Serotonin is a neurotransmitter, amongst other things (e.g. it is a vasodilator
+        - it''s name serotonin comes from serum and tone - basically blood size!).
+        The statistic is more or less accurate, but basically meaningless in the way
+        most people are taught to think about neurotransmitters. There is no happiness
+        neurotransmitter. No mood neurotransmitter. No motivation neurotransmitter.
+        No bonding neurotransmitter. None of these exist. There are neurotransmitters
+        that play roles in each of these things, but no neurotransmitter controls
+        one function by itself, and no neurotransmitter only controls one function.
+        It''s all simplified to the point of being straight up false. I think opiates
+        are the most obvious example we''re all familiar with - we all know opiates
+        are extremely potent pain killers, but also extremely addictive. Why would
+        that be? It''s because opiates work in multiple, different parts of our nervous
+        system. They tune pain information within the spinal cord - opioids made by
+        your body can turn down pain signals, so the drugs do too. But opioids made
+        by your body are also involved in mood and behavioral reward. So when we make
+        a drug that hits opioid receptors, we''re making a drug that is going to do
+        two VERY different things. We get a release from pain, but we also get a massive
+        dose of \"reward\" and positive mood - so we develop an addiction. Serotonin
+        is the same, sort of, but different in that serotonin actually has a ton more
+        functions throughout your body than opiates do. So yes, there is more serotonin
+        in your gut than in your brain, and by a lot. Because serotonin changes blood
+        vessel dynamics and in the gut it changes muscle contractions - it''s doing
+        something very different in your gut than in your brain. In the spinal cord
+        it tunes nociception sensitivity, but also gain in motor circuits. In your
+        heart it controls heart beat contractions and valve function. Platelets release
+        it during blood infections to modulate your immune response (this is the largest
+        serotonin dump I''ve ever read of - from blood cells into blood serum during
+        sepsis). Serotonin evolved in animals a REALLY long time ago, so it''s been
+        utilized in a ton of different systems. Mood is only a small part of it. That
+        said, there are definitely aspects of gut health modulating mood. But it''s
+        separate from the serotonin stuff. It most likely has to do with the vagus
+        nerve detecting the gut environment, including nutritional content and microbiome
+        status, and sending that information to the brain. Which can lead to things
+        like serotonin and dopamine release in the brain, sometimes. Serotonin in
+        your gut, and there is a ton of it, modulates blood vessels and gut muscles.
+        More on reddit.com", "publishedDate": null, "thumbnail": "", "engine": "brave",
+        "parsed_url": ["https", "www.reddit.com", "/r/biology/comments/18ouunq/they_say_95_of_serotonin_is_made_in_the_gut_so/",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [3], "score": 0.3333333333333333, "category": "general"}, {"url": "https://www.samphireneuro.com/en-us/blog/gut-brain-axis-communication?srsltid=AfmBOooFqkJ1DQz9BtmA2C4_PVwBYSLUcDkrT5OHYJulaRNLh7NL0PoT",
+        "title": "The gut-brain axis: how your second brain talks to your first",
+        "content": "In fact, around 90% of the body''s serotonin is made in the gut.
+        While gut-derived serotonin (GDS) doesn''t directly cross into the brain,
+        it can\u00a0...", "publishedDate": "2025-08-05T00:00:00", "engine": "startpage",
+        "template": "default.html", "parsed_url": ["https", "www.samphireneuro.com",
+        "/en-us/blog/gut-brain-axis-communication", "", "srsltid=AfmBOooFqkJ1DQz9BtmA2C4_PVwBYSLUcDkrT5OHYJulaRNLh7NL0PoT",
+        ""], "img_src": "", "thumbnail": "", "priority": "", "engines": ["startpage"],
+        "positions": [3], "score": 0.3333333333333333, "category": "general", "pubdate":
+        "2025-08-05 00:00:00"}, {"url": "https://med.stanford.edu/news/insights/2025/03/gut-brain-connection-long-covid-anxiety-parkinsons.html",
+        "title": "The gut-brain connection: What the science says - Stanford Medicine",
+        "content": "Through direct signals from the vagus nerve, which connects the
+        brain and the gut, as well as through molecules secreted into the bloodstream\u00a0...",
+        "publishedDate": "2025-03-06T00:00:00", "engine": "startpage", "template":
+        "default.html", "parsed_url": ["https", "med.stanford.edu", "/news/insights/2025/03/gut-brain-connection-long-covid-anxiety-parkinsons.html",
+        "", "", ""], "img_src": "", "thumbnail": "", "priority": "", "engines": ["startpage"],
+        "positions": [4], "score": 0.25, "category": "general", "pubdate": "2025-03-06
+        00:00:00"}, {"url": "https://www.nature.com/articles/s41392-024-01743-1",
+        "title": "Microbiota\u2013gut\u2013brain axis and its therapeutic applications
+        ... - Nature", "content": "Studies have shown that gut microbiota is capable
+        of producing or stimulating the production of neurotransmitters, including
+        serotonin, dopamine\u00a0...", "publishedDate": "2024-02-16T00:00:00", "engine":
+        "startpage", "template": "default.html", "parsed_url": ["https", "www.nature.com",
+        "/articles/s41392-024-01743-1", "", "", ""], "img_src": "", "thumbnail": "",
+        "priority": "", "engines": ["startpage"], "positions": [5], "score": 0.2,
+        "category": "general", "pubdate": "2024-02-16 00:00:00"}, {"url": "https://www.mdpi.com/2072-6643/17/5/842",
+        "title": "Gut over Mind: Exploring the Powerful Gut\u2013Brain Axis - MDPI",
+        "content": "The gut microbiota can influence brain chemistry, including the
+        production of neurotransmitters like serotonin (which is primarily produced
+        in the gut).", "publishedDate": null, "engine": "startpage", "template": "default.html",
+        "parsed_url": ["https", "www.mdpi.com", "/2072-6643/17/5/842", "", "", ""],
+        "img_src": "", "thumbnail": "", "priority": "", "engines": ["startpage"],
+        "positions": [6], "score": 0.16666666666666666, "category": "general"}, {"url":
+        "https://mynutriweb.com/the-gut-brain-axis-more-than-just-a-gut-feeling/",
+        "title": "The Gut-Brain Axis: more than just a gut feeling | MyNutriWeb Blog",
+        "content": "You may have heard that around 95% of serotonin (dubbed our \u201chappy
+        hormone\u201d) is produced in the gut, and this is often offered as an explanation
+        of how gut\u00a0...", "publishedDate": null, "engine": "startpage", "template":
+        "default.html", "parsed_url": ["https", "mynutriweb.com", "/the-gut-brain-axis-more-than-just-a-gut-feeling/",
+        "", "", ""], "img_src": "", "thumbnail": "", "priority": "", "engines": ["startpage"],
+        "positions": [7], "score": 0.14285714285714285, "category": "general"}, {"template":
+        "default.html", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11818468/",
+        "title": "Interaction of the Vagus Nerve and Serotonin in the Gut\u2013Brain
+        Axis - PMC", "content": "Recent research has highlighted ... [7,8]. Gut bacteria
+        produce metabolites such as short-chain fatty acids (SCFAs), which have been
+        shown to enhance the expression of tryptophan hydroxylase 1 (TPH1), the rate-limiting
+        enzyme in serotonin synthesis [9]. SCFAs also modulate ...", "publishedDate":
+        null, "thumbnail": "", "engine": "brave", "parsed_url": ["https", "pmc.ncbi.nlm.nih.gov",
+        "/articles/PMC11818468/", "", "", ""], "img_src": "", "priority": "", "engines":
+        ["brave"], "positions": [8], "score": 0.125, "category": "general"}, {"url":
+        "https://www.sciencedirect.com/topics/immunology-and-microbiology/gut-brain-axis",
+        "title": "Gut-Brain Axis - an overview | ScienceDirect Topics", "content":
+        "The gut-brain axis is defined as a bidirectional communication pathway between
+        the gastrointestinal tract and the central nervous system, involving hormonal\u00a0...",
+        "publishedDate": null, "engine": "startpage", "template": "default.html",
+        "parsed_url": ["https", "www.sciencedirect.com", "/topics/immunology-and-microbiology/gut-brain-axis",
+        "", "", ""], "img_src": "", "thumbnail": "", "priority": "", "engines": ["startpage"],
+        "positions": [8], "score": 0.125, "category": "general"}, {"template": "default.html",
+        "url": "https://www.gutmicrobiotaforhealth.com/know-serotonin-interview-gut-brain-axis-researcher-elaine-hsiao/",
+        "title": "Know your serotonin: An interview with gut-brain axis researcher
+        Elaine Hsiao - Gut Microbiota for Health", "content": "So they\u2019re the
+        same molecule but made by different cell types, and as such, can elicit different
+        localized functions. \u201cOur work has shown that particular species from
+        the gut microbiome stimulate gut endocrine cells to produce serotonin,\u201d
+        said ...", "publishedDate": "2020-03-02T00:00:00", "thumbnail": "https://imgs.search.brave.com/To7Dk1dZGUlLaCPG96Uv1QTHvsLbaETRc4shumFx5Yw/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/Z3V0bWljcm9iaW90/YWZvcmhlYWx0aC5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTcvMDEvRWxhaW5l/LUhzaWFvLmpwZw",
+        "engine": "brave", "parsed_url": ["https", "www.gutmicrobiotaforhealth.com",
+        "/know-serotonin-interview-gut-brain-axis-researcher-elaine-hsiao/", "", "",
+        ""], "img_src": "", "priority": "", "engines": ["startpage", "brave"], "positions":
+        [4, 2], "score": 1.5, "category": "general", "pubdate": "2020-03-02 00:00:00"},
+        {"template": "default.html", "url": "https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2021.748254/full",
+        "title": "Frontiers | Crosstalk Between Intestinal Serotonergic System and
+        Pattern Recognition Receptors on the Microbiota\u2013Gut\u2013Brain Axis",
+        "content": "In this context, several studies have indicated that 5-HT and
+        serotonergic system modulation by intestinal microbiota are critical in the
+        maintenance of the gut\u2013brain axis (220\u2013222). Microbiota can produce
+        tryptophan and tryptamine, directly affecting central 5-HT production (223).
+        GF mice display a reduction in anxiety-like behavior compared with specific
+        pathogen-free mice, showing a decreased expression of serotonin receptor 1A
+        in the hippocampus (224).", "publishedDate": "2021-10-05T00:00:00", "thumbnail":
+        "https://imgs.search.brave.com/NeqkzVC2VvLINT2mfJl6uL-hIPCm3D-vXKIQl8o7nr0/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtcHJvdmlkZXIu/ZnJvbnRpZXJzaW4u/b3JnL2FwaS9pcHgv/dz0xMjAwJmY9cG5n/L2h0dHBzOi8vd3d3/LmZyb250aWVyc2lu/Lm9yZy9maWxlcy9B/cnRpY2xlcy83NDgy/NTQvZmVuZG8tMTIt/NzQ4MjU0LUhUTUwt/cjEvaW1hZ2VfbS9m/ZW5kby0xMi03NDgy/NTQtZzAwMS5qcGc",
+        "engine": "brave", "parsed_url": ["https", "www.frontiersin.org", "/journals/endocrinology/articles/10.3389/fendo.2021.748254/full",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [2], "score": 0.5, "category": "general", "pubdate": "2021-10-05 00:00:00"},
+        {"template": "default.html", "url": "https://www.intechopen.com/chapters/1158792",
+        "title": "Serotonin: The Link between Gut Microbiome and Brain | IntechOpen",
+        "content": "Serotonin is closely linked to the microbiome-gut-brain axis,
+        which is a bidirectional communication between the gut and the brain facilitated
+        by the gut microbiome which consists of trillions of microorganisms that inhabit
+        the digestive tract.", "publishedDate": "2024-01-29T00:00:00", "thumbnail":
+        "https://imgs.search.brave.com/m3A5SAZ5XtdVTNZ5eF9-y94ln0OMS2WxdkR7XWi4_Wc/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9jZG5p/bnRlY2guY29tL2Jv/b2tzLzEwMDI2Njkv/MTcyMTAyNjU4OS05/MzM0ODY1NTQvd2Vi/LWNvdmVyLmpwZw",
+        "engine": "brave", "parsed_url": ["https", "www.intechopen.com", "/chapters/1158792",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["startpage", "brave"],
+        "positions": [9, 10], "score": 0.4222222222222222, "category": "general",
+        "pubdate": "2024-01-29 00:00:00"}, {"template": "default.html", "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/fsn3.3826",
+        "title": "Exploring the serotonin\u2010probiotics\u2010gut health axis: A
+        review of current evidence and potential mechanisms - Akram - 2024 - Food
+        Science & Nutrition - Wiley Online Library", "content": "There is an increasing
+        body of ... of this axis. The enterochromaffin cells (ECCs) in the gastrointestinal
+        system are responsible for the production of around 90% of the body''s total
+        serotonin....", "publishedDate": "2023-12-07T00:00:00", "thumbnail": "https://imgs.search.brave.com/IUHua3Kz3xyjnglMB_1fX9fBmqu0_NG1DWxMawdwRFA/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9vbmxp/bmVsaWJyYXJ5Lndp/bGV5LmNvbS9jbXMv/YXNzZXQvZmZhNTQ2/ZjgtZjNkYS00NTg2/LWIyMzQtYzA2ZGQz/MTM3ZDY4L2ZzbjMz/ODI2LXRvYy0wMDAx/LW0uanBnP3RyaWNr/PTE3NzU3ODQ2MjAz/MjI",
+        "engine": "brave", "parsed_url": ["https", "onlinelibrary.wiley.com", "/doi/full/10.1002/fsn3.3826",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [5], "score": 0.2, "category": "general", "pubdate": "2023-12-07 00:00:00"},
+        {"template": "default.html", "url": "https://www.tinyhealth.com/blog/science-of-happiness-serotonin-gut-brain-axis-food-mood",
+        "title": "Serotonin and the Gut-Brain Axis: Can Food Affect Your Mood?", "content":
+        "Does this mean that we can boost serotonin production by eating foods high
+        in tryptophan? Keep reading to learn more. While some serotonin is produced
+        in the brain, most of it is produced in the gut by cells known as enterochromaffin
+        cells.", "publishedDate": "2026-01-07T00:00:00", "thumbnail": "https://imgs.search.brave.com/40TQUrsP31gKb3NXYcFojQdIQ5Bz8EIpNO3efYbsLK0/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS82/NjYzMDEyYmQ0Njdi/MWVmYTAxYjEzMGQv/NjZhMTliNDUyODYx/ZTQwYjhiOThiMTA4/XzY2NDI2YWI4ZDVl/ZWJiYTZhYWIyYjNl/YV9TT0glMjUyMC0l/MjUyMFNlcm90b25p/bi5hdmlm",
+        "engine": "brave", "parsed_url": ["https", "www.tinyhealth.com", "/blog/science-of-happiness-serotonin-gut-brain-axis-food-mood",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [6], "score": 0.16666666666666666, "category": "general", "pubdate": "2026-01-07
+        00:00:00"}, {"template": "default.html", "url": "https://www.sciencedirect.com/science/article/abs/pii/S0166432814004768",
+        "title": "Serotonin, tryptophan metabolism and the brain-gut-microbiome axis
+        - ScienceDirect", "content": "The mechanisms underpinning this crosstalk require
+        further elaboration but may be related to the ability of the gut microbiota
+        to control host tryptophan metabolism along the kynurenine pathway, thereby
+        simultaneously reducing the fraction available for serotonin synthesis and
+        increasing the production of neuroactive metabolites. The enzymes of this
+        pathway are immune and stress-responsive, both systems which buttress the
+        brain-gut axis.", "publishedDate": "2014-07-29T00:00:00", "thumbnail": "https://imgs.search.brave.com/hi2O-vXq56x_7lygWC8haKq35bvX169PPTmVXHZMmyw/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hcnMu/ZWxzLWNkbi5jb20v/Y29udGVudC9pbWFn/ZS8xLXMyLjAtUzAx/NjY0MzI4MTRYMDAx/ODUtY292MTUwaC5n/aWY.jpeg",
+        "engine": "brave", "parsed_url": ["https", "www.sciencedirect.com", "/science/article/abs/pii/S0166432814004768",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [7], "score": 0.14285714285714285, "category": "general", "pubdate": "2014-07-29
+        00:00:00"}, {"template": "default.html", "url": "https://en.wikipedia.org/wiki/Gut%E2%80%93brain_axis",
+        "title": "Gut\u2013brain axis - Wikipedia", "content": "The gut microbiota
+        can produce a range of neuroactive molecules, such as acetylcholine, catecholamines,
+        \u03b3-aminobutyric acid, histamine, melatonin, and serotonin, which are essential
+        for regulating peristalsis and sensation in the gut.", "publishedDate": null,
+        "thumbnail": "https://imgs.search.brave.com/CQqW43XqSu-Zy1exiUI1SXyX1ETSh9QTvYxarI7ymvQ/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8w/LzBjL1BsYW50X21p/Y3JvYmlvdGEucG5n",
+        "engine": "brave", "parsed_url": ["https", "en.wikipedia.org", "/wiki/Gut%E2%80%93brain_axis",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [10], "score": 0.1, "category": "general"}, {"template": "default.html", "url":
+        "https://www.nature.com/articles/s41598-020-79171-8", "title": "Modulation
+        of serotonin signaling/metabolism by Akkermansia muciniphila and its extracellular
+        vesicles through the gut-brain axis in mice | Scientific Reports", "content":
+        "Serotonin, produced by enterochromaffin cells (ECCs) in the GI tract, accounts
+        for approximately 95% of total serotonin in the body, while about 5% of the
+        remaining serotonin is found in the brain6,7,8. Since GI is an important reservoir
+        of ...", "publishedDate": "2020-12-17T00:00:00", "thumbnail": "https://imgs.search.brave.com/JdhP9dxAEF55xxoCxkCQn-B1e05C11JmBKidyMS9GwA/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5zcHJpbmdlcm5h/dHVyZS5jb20vbTY4/NS9zcHJpbmdlci1z/dGF0aWMvaW1hZ2Uv/YXJ0JTNBMTAuMTAz/OCUyRnM0MTU5OC0w/MjAtNzkxNzEtOC9N/ZWRpYU9iamVjdHMv/NDE1OThfMjAyMF83/OTE3MV9GaWcxX0hU/TUwuanBn",
+        "engine": "brave", "parsed_url": ["https", "www.nature.com", "/articles/s41598-020-79171-8",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [11], "score": 0.09090909090909091, "category": "general", "pubdate": "2020-12-17
+        00:00:00"}, {"template": "default.html", "url": "https://www.mdpi.com/1422-0067/26/3/1160",
+        "title": "Interaction of the Vagus Nerve and Serotonin in the Gut\u2013Brain
+        Axis", "content": "Recent research has highlighted ... [7,8]. Gut bacteria
+        produce metabolites such as short-chain fatty acids (SCFAs), which have been
+        shown to enhance the expression of tryptophan hydroxylase 1 (TPH1), the rate-limiting
+        enzyme in serotonin synthesis [9]. SCFAs ...", "publishedDate": "2025-01-29T00:00:00",
+        "thumbnail": "https://imgs.search.brave.com/6EbHSN6iuufu_4Y7-vegZTXdqxlUF__vESMP82p0R30/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9wdWIu/bWRwaS1yZXMuY29t/L2lqbXMvaWptcy0y/Ni0wMTE2MC9hcnRp/Y2xlX2RlcGxveS9o/dG1sL2ltYWdlcy9p/am1zLTI2LTAxMTYw/LWcwMDEtNTUwLmpw/Zz8xNzM4MTQyNzMx",
+        "engine": "brave", "parsed_url": ["https", "www.mdpi.com", "/1422-0067/26/3/1160",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [12], "score": 0.08333333333333333, "category": "general", "pubdate": "2025-01-29
+        00:00:00"}, {"url": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-brain-gut-connection",
+        "title": "The Brain-Gut Connection | Johns Hopkins Medicine", "content": "This
+        understanding of the ENS-CNS connection helps explain the effectiveness of
+        IBS and bowel-disorder treatments such as antidepressants and mind-body\u00a0...",
+        "publishedDate": null, "engine": "startpage", "template": "default.html",
+        "parsed_url": ["https", "www.hopkinsmedicine.org", "/health/wellness-and-prevention/the-brain-gut-connection",
+        "", "", ""], "img_src": "", "thumbnail": "", "priority": "", "engines": ["startpage"],
+        "positions": [9], "score": 0.1111111111111111, "category": "general"}, {"template":
+        "default.html", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4662178/",
+        "title": "The Gut-Brain Axis: The Missing Link in Depression - PMC", "content":
+        "For example; Lactobacillus and Bifidobacterium synthesize gamma-aminobutyric
+        acid (GABA) from monosodium glutamate.18) Escherichia coli, Bacillus and Saccharomyces
+        produce norepinefrin; Candida, Streptococcus, Escherichia and Enterococcus
+        produce serotonin, and Bacillus and Serratia produce dopamine.19) When rats
+        were given Bifidobacterium infantis orally, increased plasma tryptophan levels
+        were observed.20) Lactobacillus acidophilus increases the expression of cannabinoid
+        receptors in the brainstem.21) Conversely, germ-free (GF) rats had high plasma
+        serotonin levels.22) The diversity of the gut microbiota can change under
+        the influence of drugs, diet and stress.", "publishedDate": null, "thumbnail":
+        "", "engine": "brave", "parsed_url": ["https", "pmc.ncbi.nlm.nih.gov", "/articles/PMC4662178/",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [13], "score": 0.07692307692307693, "category": "general"}, {"template": "default.html",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7659911/", "title": "Does
+        Seratonin in the intestines make you happy? - PMC - NIH", "content": "It acts
+        as a neurotransmitter in the brain and as an intracellular signaling molecule
+        and auto or paracrine factor in the periphery (1, 2). The serotonin synthesized
+        in the argentaffin cells in intestines regulates functions such as excretion
+        in the GIT (Figure 1). This serotonin cannot reach ...", "publishedDate":
+        null, "thumbnail": "", "engine": "brave", "parsed_url": ["https", "pmc.ncbi.nlm.nih.gov",
+        "/articles/PMC7659911/", "", "", ""], "img_src": "", "priority": "", "engines":
+        ["brave"], "positions": [14], "score": 0.07142857142857142, "category": "general"},
+        {"template": "default.html", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8234057/",
+        "title": "Regulation of Neurotransmitters by the Gut Microbiota and Effects
+        on Cognition in Neurological Disorders - PMC", "content": "There is accumulating
+        evidence ... products to the brain, through intestinal neuropod cells acting
+        on the vagus nerve, through activation of intestinal endocrine cells to produce
+        serotonin, and by affecting immune cells and inflammation. These findings
+        support the microbiota\u2013gut\u2013brain axis ...", "publishedDate": null,
+        "thumbnail": "", "engine": "brave", "parsed_url": ["https", "pmc.ncbi.nlm.nih.gov",
+        "/articles/PMC8234057/", "", "", ""], "img_src": "", "priority": "", "engines":
+        ["brave"], "positions": [19], "score": 0.05263157894736842, "category": "general"},
+        {"template": "default.html", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5526216/",
+        "title": "Serotonergic Mechanisms Regulating the GI Tract: Experimental Evidence
+        and Therapeutic Relevance - PMC", "content": "Serotonin (5-hydroxytryptamine;
+        5-HT) is best known as a neurotransmitter critical for central nervous system
+        (CNS) development and function. 95% of the body\u2019s serotonin, however,
+        is produced in the intestine where it has been increasingly ...", "publishedDate":
+        null, "thumbnail": "", "engine": "brave", "parsed_url": ["https", "pmc.ncbi.nlm.nih.gov",
+        "/articles/PMC5526216/", "", "", ""], "img_src": "", "priority": "", "engines":
+        ["brave"], "positions": [20], "score": 0.05, "category": "general"}, {"template":
+        "default.html", "url": "https://www.amymyersmd.com/blogs/articles/serotonin-and-the-gut",
+        "title": "Serotonin & The Gut: The Gut-Brain Axis \u2013 AMMD", "content":
+        "... The gut-brain axis is a vital ... explains how gut health influences
+        mood, as nearly 95% of the body''s serotonin\u2014a key mood-regulating neurotransmitter\u2014is
+        produced in the gut....", "publishedDate": "2023-05-11T00:00:00", "thumbnail":
+        "https://imgs.search.brave.com/KTv4W6LlqXWZPlF2emf8ZhEZ1AXdWHbFjjBNMmpp9kk/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YW15bXllcnNtZC5j/b20vY2RuL3Nob3Av/YXJ0aWNsZXMvQXJ0/aWNsZV9TZXJvdG9u/aW4tXy1UaGUtR3V0/LVRoZS1HdXQtQnJh/aW4tQXhpc19mMzE1/ZjU0OC0yNDM3LTQ0/MTUtYWYxNi03NmMx/MGE3MTcyYWUuanBn/P3Y9MTczODE3OTI3/OQ",
+        "engine": "brave", "parsed_url": ["https", "www.amymyersmd.com", "/blogs/articles/serotonin-and-the-gut",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [15], "score": 0.06666666666666667, "category": "general", "pubdate": "2023-05-11
+        00:00:00"}, {"template": "default.html", "url": "https://www.sciencedirect.com/science/article/pii/S1568163721003032",
+        "title": "The role of serotonin within the microbiota-gut-brain axis in the
+        development of Alzheimer\u2019s disease: A narrative review - ScienceDirect",
+        "content": "In this narrative review, the available evidence concerning the
+        orchestrating role of serotonin within the microbiota-gut-brain axis in the
+        development of AD is summarized and discussed, and general considerations
+        for future studies are highlighted.", "publishedDate": "2022-01-03T00:00:00",
+        "thumbnail": "https://imgs.search.brave.com/Hb9tfNiDfxwapRh4dDgNdoNY1eiiEzWNlgGPta7MvNg/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hcnMu/ZWxzLWNkbi5jb20v/Y29udGVudC9pbWFn/ZS8xLXMyLjAtUzE1/NjgxNjM3MjFYMDAx/MTYtY292MTUwaC5n/aWY.jpeg",
+        "engine": "brave", "parsed_url": ["https", "www.sciencedirect.com", "/science/article/pii/S1568163721003032",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [16], "score": 0.0625, "category": "general", "pubdate": "2022-01-03 00:00:00"},
+        {"template": "default.html", "url": "https://www.sciencedirect.com/science/article/pii/S0958166922001604",
+        "title": "Toward manipulating serotonin signaling via the microbiota\u2013gut\u2013brain
+        axis - ScienceDirect", "content": "Advances in probiotic engineering could
+        be used to regulate host serotonin levels. It is now well established in humans
+        that there is a bidirectional pathway of communication between the central
+        and enteric nervous systems in which members of the microbiome participate.
+        This microbiota\u2013gut\u2013brain axis (MGBA) is crucial for normal development
+        and physiology, and its dysregulation has been implicated in a range of neurological
+        and intestinal disorders.", "publishedDate": "2022-10-28T00:00:00", "thumbnail":
+        "https://imgs.search.brave.com/NnS0Q865b4_PQ5P2_jAx3TUM7xLmxjP2yocM-urTJSE/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hcnMu/ZWxzLWNkbi5jb20v/Y29udGVudC9pbWFn/ZS8xLXMyLjAtUzA5/NTgxNjY5MjIwMDE2/MDQtZ2ExLmpwZw",
+        "engine": "brave", "parsed_url": ["https", "www.sciencedirect.com", "/science/article/pii/S0958166922001604",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [17], "score": 0.058823529411764705, "category": "general", "pubdate": "2022-10-28
+        00:00:00"}, {"template": "default.html", "url": "https://www.apa.org/monitor/2012/09/gut-feeling",
+        "title": "That gut feeling", "content": "Gut bacteria both produce and respond
+        to the same neurochemicals\u2014such as GABA, serotonin, norepinephrine, dopamine,
+        acetylcholine and melatonin\u2014that the brain uses to regulate mood and
+        cognition.", "publishedDate": "2012-09-01T00:00:00", "thumbnail": "https://imgs.search.brave.com/EsJJqnZrGRQ43MTKXt6MbJONVLSfupxzA_I1_qx8fmk/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YXBhLm9yZy9Db250/ZW50L0ltYWdlcy9z/b2NpYWwtc2hhcmUu/cG5n",
+        "engine": "brave", "parsed_url": ["https", "www.apa.org", "/monitor/2012/09/gut-feeling",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [18], "score": 0.05555555555555555, "category": "general", "pubdate": "2012-09-01
+        00:00:00"}, {"template": "default.html", "url": "https://www.psychologytoday.com/us/blog/mood-microbe/202208/the-serotonin-hypothesis-and-the-gut-brain-axis",
+        "title": "The Serotonin Hypothesis and the Gut-Brain Axis | Psychology Today",
+        "content": "No one really knows why SSRIs sometimes work\u2014and sometimes
+        don\u2019t. Part of the mystery lies in the gut. Surprisingly, 95 percent
+        of the serotonin in your body is active in your gut, not your brain.", "publishedDate":
+        "2022-08-03T00:00:00", "thumbnail": "https://imgs.search.brave.com/ER7a515RzwEO1tR3fOya7Otecr3JISfigiaqayZWmVs/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9jZG4y/LnBzeWNob2xvZ3l0/b2RheS5jb20vYXNz/ZXRzL3N0eWxlcy9t/YW51YWxfY3JvcF8x/XzkxXzFfMTUyOHg4/MDAvcHVibGljL2Zp/ZWxkX2Jsb2dfZW50/cnlfdGVhc2VyX2lt/YWdlLzIwMjItMDgv/YW50aWRlcHJlc3Nh/bnRfc3F1YXJlLmpw/Zz9pdG9rPVFDUXha/ZVM1",
+        "engine": "brave", "parsed_url": ["https", "www.psychologytoday.com", "/us/blog/mood-microbe/202208/the-serotonin-hypothesis-and-the-gut-brain-axis",
+        "", "", ""], "img_src": "", "priority": "", "engines": ["brave"], "positions":
+        [21], "score": 0.047619047619047616, "category": "general", "pubdate": "2022-08-03
+        00:00:00"}], "answers": [], "corrections": [], "infoboxes": [], "suggestions":
+        ["90% of serotonin is produced in the gut", "gut serotonin and depression",
+        "does serotonin in the gut affect mood", "gut-brain axis review article",
+        "symptoms of low serotonin in gut", "is serotonin produced in the gut", "where
+        is serotonin produced in the brain", "how to increase serotonin in the gut"],
+        "unresponsive_engines": [["duckduckgo", "CAPTCHA"], ["google", "Suspended:
+        access denied"]]}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '28804'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 11 Apr 2026 01:23:37 GMT
+      Referrer-Policy:
+      - no-referrer
+      Server:
+      - Werkzeug/3.1.4 Python/3.13.12
+      Server-Timing:
+      - total;dur=512.889, render;dur=0, total_0_wikipedia;dur=79.655, total_1_brave;dur=415.263,
+        total_2_startpage;dur=509.475, load_0_wikipedia;dur=76.197, load_1_brave;dur=393.225,
+        load_2_startpage;dur=494.692
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Robots-Tag:
+      - noindex, nofollow
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - fa32cd66-dc96-428a-9871-e7222540bd1c
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''modules.json; filename="modules.json";
+      Content-Length:
+      - '282'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:52 GMT
+      Location:
+      - /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22
+      RateLimit:
+      - '"resolvers";r=2999;t=284'
+      RateLimit-Policy:
+      - '"fixed window";"resolvers";q=3000;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin, Accept
+      Via:
+      - 1.1 3785ee12fd6da5a022c1747ed7b60a80.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - R36-GIqdWRcbfHXG3rqbxIhn9yCR6P3bpFQtflREYyL1wC9D_gx-qw==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-HF-Warning:
+      - 'unauthenticated; Warning: You are sending unauthenticated requests to the
+        HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.'
+      X-Hub-Cache:
+      - HIT
+      X-Linked-ETag:
+      - '"952a9b81c0bfd99800fabf352f69c7ccd46c5e43"'
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-69d9a2a8-2cd39b6e7452cd8064683bc9;fa32cd66-dc96-428a-9871-e7222540bd1c
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - be893e70-2976-48fa-92d1-476ff1053ee2
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Age:
+      - '25015187'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''modules.json; filename="modules.json";
+      Content-Length:
+      - '349'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 25 Jun 2025 12:44:05 GMT
+      ETag:
+      - '"952a9b81c0bfd99800fabf352f69c7ccd46c5e43"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 dad0da2ca34fd3c27ca079cd27d2513a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Rkykl5XsRqD2Nb2hk8eVp9bXI5fbSlzLprSfyKtDFmwoM3lrWwJDXw==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Hit from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-685bef15-3a41c56b361ead6a272da73f;7aacc6df-fba0-4384-a475-015feea7167e
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 8b458a50-b2a3-4b37-bb7b-94814c5b8ae5
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''config_sentence_transformers.json; filename="config_sentence_transformers.json";
+      Content-Length:
+      - '324'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:52 GMT
+      Location:
+      - /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22
+      RateLimit:
+      - '"resolvers";r=2998;t=284'
+      RateLimit-Policy:
+      - '"fixed window";"resolvers";q=3000;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin, Accept
+      Via:
+      - 1.1 a8a929dafe46e415e9e427a5235b65b4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - fU90LLJYXbmww9z1sjdW_rq5EH0EUP6pAAbpkFgFBgHB16PldzUwLw==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Linked-ETag:
+      - '"fd1b291129c607e5d49799f87cb219b27f98acdf"'
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-69d9a2a8-6ebe6c340ccd3b6d620b555f;8b458a50-b2a3-4b37-bb7b-94814c5b8ae5
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 61bc6b42-08d6-48de-af85-9b291e1a0474
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Age:
+      - '25015188'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''config_sentence_transformers.json; filename="config_sentence_transformers.json";
+      Content-Length:
+      - '116'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 25 Jun 2025 12:44:05 GMT
+      ETag:
+      - '"fd1b291129c607e5d49799f87cb219b27f98acdf"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 316bcacdaef47a713cd59d65f5da1f64.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - JGJo1zP5lMhbUpDI8bl6lC0Yzws_3uM6RDHeQF-IRhGSIeuF5HnHhQ==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Hit from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-685bef15-7864690f3da382eb0b96b456;93c0be06-a75d-4ee0-b04b-c6fa6de473e1
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - af0d0f7d-66e9-437a-bc6c-6ec466121cc9
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''config_sentence_transformers.json; filename="config_sentence_transformers.json";
+      Content-Length:
+      - '324'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:53 GMT
+      Location:
+      - /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22
+      RateLimit:
+      - '"resolvers";r=2997;t=283'
+      RateLimit-Policy:
+      - '"fixed window";"resolvers";q=3000;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin, Accept
+      Via:
+      - 1.1 69f54fd525eb29c918e6e1c0a7125022.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ym6LCyuJc37yYKRHU0PPiRhYU0jST_ElDinBQZwQ2yf23U89yb8G5g==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Linked-ETag:
+      - '"fd1b291129c607e5d49799f87cb219b27f98acdf"'
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-69d9a2a9-7cce6a76188b034902de782d;af0d0f7d-66e9-437a-bc6c-6ec466121cc9
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 332d42d3-5b25-4ab1-9e34-e1934ab29523
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Age:
+      - '25015188'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''config_sentence_transformers.json; filename="config_sentence_transformers.json";
+      Content-Length:
+      - '116'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 25 Jun 2025 12:44:05 GMT
+      ETag:
+      - '"fd1b291129c607e5d49799f87cb219b27f98acdf"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 630d35bf6016c7c9ee87eeeb6a015258.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - -sgJAvDFceDrDt9msWudoyV8C9tlUSkgd_M1s4VlWY6_m36JXfh99Q==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Hit from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-685bef15-7864690f3da382eb0b96b456;93c0be06-a75d-4ee0-b04b-c6fa6de473e1
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 898f85b7-5445-4a44-97da-512c0faadabf
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''README.md; filename="README.md";
+      Content-Length:
+      - '276'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:54 GMT
+      Location:
+      - /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%2258d4a9a45664eb9e12de9549c548c09b6134c17f%22
+      RateLimit:
+      - '"resolvers";r=2996;t=282'
+      RateLimit-Policy:
+      - '"fixed window";"resolvers";q=3000;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin, Accept
+      Via:
+      - 1.1 69f54fd525eb29c918e6e1c0a7125022.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - RvnAdTBg6Gn2kiEktFmfbe5by2KG3SHfk9mkiO2iuRgdlB0kpcdpAg==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Linked-ETag:
+      - '"58d4a9a45664eb9e12de9549c548c09b6134c17f"'
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-69d9a2aa-3fcc1d8322c465f749f68724;898f85b7-5445-4a44-97da-512c0faadabf
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 2ece6c97-86e1-46f6-8640-d68b9992c42b
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Age:
+      - '25015189'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''README.md; filename="README.md";
+      Content-Length:
+      - '10454'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 25 Jun 2025 12:44:05 GMT
+      ETag:
+      - '"58d4a9a45664eb9e12de9549c548c09b6134c17f"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 48ef409da41fe0542cf5af7ce8fe0a50.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - bDo3ymjxp7VAOUwOjojBQdx4StCnIgYiX7xDmVKNW9cDX887OTBAnw==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Hit from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-685bef15-5184967d56e8e4fc62644cc6;66eece55-b81e-4130-8adf-e8c9e4ec5fb7
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 1d62c65b-616f-4d1d-9967-e3faa663ce96
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''modules.json; filename="modules.json";
+      Content-Length:
+      - '282'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:54 GMT
+      Location:
+      - /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22
+      RateLimit:
+      - '"resolvers";r=2995;t=282'
+      RateLimit-Policy:
+      - '"fixed window";"resolvers";q=3000;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin, Accept
+      Via:
+      - 1.1 ae8ec67d699d3ceff3b2fac4a0d9e258.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - _-u0zNaPppEWzoTUWid-5ow337Kz-ptV71iIMHkgGEwsFBLvW0Iwaw==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Linked-ETag:
+      - '"952a9b81c0bfd99800fabf352f69c7ccd46c5e43"'
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-69d9a2aa-6eea76295526d9ba4a0e7d47;1d62c65b-616f-4d1d-9967-e3faa663ce96
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - ff4399ee-8ca4-4491-9f1c-ba6ad15d514c
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Age:
+      - '25015189'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''modules.json; filename="modules.json";
+      Content-Length:
+      - '349'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 25 Jun 2025 12:44:05 GMT
+      ETag:
+      - '"952a9b81c0bfd99800fabf352f69c7ccd46c5e43"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 079b0090032265876125dfe9b8696db0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - li4d-JjLvVUFqU2p_Z2J_WLoz9IZSvbzCb3sU1Kr88lbFDB0_EgFjA==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Hit from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-685bef15-3a41c56b361ead6a272da73f;7aacc6df-fba0-4384-a475-015feea7167e
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 6741cbe9-dcb2-4e17-b95c-ca1ce82b7a70
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''sentence_bert_config.json; filename="sentence_bert_config.json";
+      Content-Length:
+      - '308'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:55 GMT
+      Location:
+      - /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%2259d594003bf59880a884c574bf88ef7555bb0202%22
+      RateLimit:
+      - '"resolvers";r=2994;t=281'
+      RateLimit-Policy:
+      - '"fixed window";"resolvers";q=3000;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin, Accept
+      Via:
+      - 1.1 a920b52b21663335428d74c1b3de31cc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - GYKRn70itYxFX9OpFJVkvIIPsMfRimEw84wcBsFHjGUaMbNxCTxPwg==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Linked-ETag:
+      - '"59d594003bf59880a884c574bf88ef7555bb0202"'
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-69d9a2ab-7dc14907609d5b7a110ae2af;6741cbe9-dcb2-4e17-b95c-ca1ce82b7a70
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - ff7ab582-8025-4373-b7e9-aae6c70c18da
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Age:
+      - '25015190'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''sentence_bert_config.json; filename="sentence_bert_config.json";
+      Content-Length:
+      - '53'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 25 Jun 2025 12:44:05 GMT
+      ETag:
+      - '"59d594003bf59880a884c574bf88ef7555bb0202"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 d2a9bd774263d0ba6b66e78c78b93c74.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - LpyOtoob1dq76ZLQHX8h_Pk_xuHgd7b4AX-KX-Ms4FdXODEI1tTHqQ==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Hit from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-685bef15-2701de4372ec3f6452acff77;8258d7bf-b341-479f-9ebc-d68d67fe1bab
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - cef8b063-cbc3-4100-8867-37b20733fd58
+      user-agent:
+      - unknown/None; hf_hub/1.9.0; python/3.13.12; transformers/5.5.0; session_id/c6c1ccec3a7c4a1581d256c92f92e45f;
+        torch/2.7.1; telemetry/off
+    method: HEAD
+    uri: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '15'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:55 GMT
+      ETag:
+      - W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"
+      RateLimit:
+      - '"resolvers";r=2993;t=281'
+      RateLimit-Policy:
+      - '"fixed window";"resolvers";q=3000;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 630d35bf6016c7c9ee87eeeb6a015258.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - yR5GGIYDWsx2T-FAwxYe04bjGsSQfFqv6MJoZFH8pGp2imtmgGB5Fw==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Error from cloudfront
+      X-Error-Code:
+      - EntryNotFound
+      X-Error-Message:
+      - Entry not found
+      X-Hub-Cache:
+      - MISS
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-69d9a2ab-49dc1f003dac92b66808d9c4;cef8b063-cbc3-4100-8867-37b20733fd58
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 37e933d7-3968-413f-bcf2-564c660cd129
+      user-agent:
+      - unknown/None; hf_hub/1.9.0; python/3.13.12; transformers/5.5.0; session_id/c6c1ccec3a7c4a1581d256c92f92e45f;
+        torch/2.7.1; telemetry/off
+    method: HEAD
+    uri: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''config.json; filename="config.json";
+      Content-Length:
+      - '280'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:55 GMT
+      Location:
+      - /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22
+      RateLimit:
+      - '"resolvers";r=2992;t=281'
+      RateLimit-Policy:
+      - '"fixed window";"resolvers";q=3000;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin, Accept
+      Via:
+      - 1.1 ae8ec67d699d3ceff3b2fac4a0d9e258.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 4dOT4TEgst8jbA89-qh_na4vvBrWKN0UhVDWvdnvCarkXty4w4fdgw==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Linked-ETag:
+      - '"72b987fd805cfa2b58c4c8c952b274a11bfd5a00"'
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-69d9a2ab-3292e9006284267e52d3b123;37e933d7-3968-413f-bcf2-564c660cd129
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 13056276-6536-49b7-91b5-1b57d7830556
+      user-agent:
+      - unknown/None; hf_hub/1.9.0; python/3.13.12; transformers/5.5.0; session_id/c6c1ccec3a7c4a1581d256c92f92e45f;
+        torch/2.7.1; telemetry/off
+    method: HEAD
+    uri: https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Age:
+      - '25015191'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''config.json; filename="config.json";
+      Content-Length:
+      - '612'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 25 Jun 2025 12:44:05 GMT
+      ETag:
+      - '"72b987fd805cfa2b58c4c8c952b274a11bfd5a00"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 133221a3c5004af16877bb4203a664b0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - HvOfPA9MiOpuffkQXBidhtHCCjdtFYOVcgfNCyPXu5fWSLhWcUJpJw==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Hit from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-685bef15-44382a433931bf8172aeeb73;c01c1905-bd11-4637-bdee-ea355b36590c
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - d340a2f9-10b4-42a5-818e-47b6e5b240bc
+      user-agent:
+      - unknown/None; hf_hub/1.9.0; python/3.13.12; transformers/5.5.0; session_id/c6c1ccec3a7c4a1581d256c92f92e45f;
+        torch/2.7.1; telemetry/off
+    method: HEAD
+    uri: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''config.json; filename="config.json";
+      Content-Length:
+      - '280'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:56 GMT
+      Location:
+      - /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22
+      RateLimit:
+      - '"resolvers";r=2991;t=280'
+      RateLimit-Policy:
+      - '"fixed window";"resolvers";q=3000;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin, Accept
+      Via:
+      - 1.1 e635875a1b765e19e161b42a06c4be12.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - hQqkiGEQkopN9CiWMXmkd1Q03xPr5KDoShraTdnf8hNUyj6LX4NpbQ==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-HF-Warning:
+      - 'unauthenticated; Warning: You are sending unauthenticated requests to the
+        HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.'
+      X-Hub-Cache:
+      - HIT
+      X-Linked-ETag:
+      - '"72b987fd805cfa2b58c4c8c952b274a11bfd5a00"'
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-69d9a2ac-38dcec867e9c49de14dcf42e;d340a2f9-10b4-42a5-818e-47b6e5b240bc
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 24f7a6d7-c0e5-43d4-8b78-627427b37a90
+      user-agent:
+      - unknown/None; hf_hub/1.9.0; python/3.13.12; transformers/5.5.0; session_id/c6c1ccec3a7c4a1581d256c92f92e45f;
+        torch/2.7.1; telemetry/off
+    method: HEAD
+    uri: https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Age:
+      - '25015191'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''config.json; filename="config.json";
+      Content-Length:
+      - '612'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 25 Jun 2025 12:44:05 GMT
+      ETag:
+      - '"72b987fd805cfa2b58c4c8c952b274a11bfd5a00"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 664662a837f61f3a1c76dc8a7d980560.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - gOuwL3V_zaK4Rhk-6G6WAvPT4xBGNXDZdUUWWA3hRjB8JLkBd-UWOA==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Hit from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-685bef15-44382a433931bf8172aeeb73;c01c1905-bd11-4637-bdee-ea355b36590c
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - da3ba760-6385-465b-8f83-d666354e1e74
+      user-agent:
+      - unknown/None; hf_hub/1.9.0; python/3.13.12; transformers/5.5.0; session_id/c6c1ccec3a7c4a1581d256c92f92e45f;
+        torch/2.7.1; telemetry/off
+    method: HEAD
+    uri: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''tokenizer_config.json; filename="tokenizer_config.json";
+      Content-Length:
+      - '300'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:57 GMT
+      Location:
+      - /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22
+      RateLimit:
+      - '"resolvers";r=2990;t=279'
+      RateLimit-Policy:
+      - '"fixed window";"resolvers";q=3000;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin, Accept
+      Via:
+      - 1.1 da8734ab8270f317b30b394eff192dc2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - XZwKe-ya9zJOIzDWHlnOG3qTtZJ7zrnRkTNKcnNd1GQYbxjnX3DFOg==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-HF-Warning:
+      - 'unauthenticated; Warning: You are sending unauthenticated requests to the
+        HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.'
+      X-Hub-Cache:
+      - HIT
+      X-Linked-ETag:
+      - '"c79f2b6a0cea6f4b564fed1938984bace9d30ff0"'
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-69d9a2ad-3aa4d3077a129d8634d52ff8;da3ba760-6385-465b-8f83-d666354e1e74
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - b9f7b644-b1c5-4415-8bbb-ae86ade713d9
+      user-agent:
+      - unknown/None; hf_hub/1.9.0; python/3.13.12; transformers/5.5.0; session_id/c6c1ccec3a7c4a1581d256c92f92e45f;
+        torch/2.7.1; telemetry/off
+    method: HEAD
+    uri: https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Age:
+      - '25015192'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''tokenizer_config.json; filename="tokenizer_config.json";
+      Content-Length:
+      - '350'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Wed, 25 Jun 2025 12:44:05 GMT
+      ETag:
+      - '"c79f2b6a0cea6f4b564fed1938984bace9d30ff0"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 d2a9bd774263d0ba6b66e78c78b93c74.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 4OFzls7auD2EXNB9AvAVSX1iNio1HteyADE_Lchx0BULtV0JxefO3g==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Hit from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-685bef15-05e517ef5d0488e37748befc;ed839547-75ff-4cdf-b1d9-e67a5cb33f50
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - dbfce1c5-ab97-4e1b-8cdd-a51aac271670
+      user-agent:
+      - unknown/None; hf_hub/1.9.0; python/3.13.12
+    method: GET
+    uri: https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false
+  response:
+    body:
+      string: '{"error":"additional_chat_templates does not exist on \"main\""}'
+    headers:
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '64'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:57 GMT
+      ETag:
+      - W/"40-09f9IAqP13xarAhQxFS2W8rvRkM"
+      RateLimit:
+      - '"api";r=499;t=279'
+      RateLimit-Policy:
+      - '"fixed window";"api";q=500;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 9941278fbe03a1a2628d2f24689f6618.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - bsVM1H2RnY8IaI2nppIszyCS0MCoYLfPY4LsIS9s_e8cQohqd2AqlA==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Error from cloudfront
+      X-Error-Code:
+      - EntryNotFound
+      X-Error-Message:
+      - additional_chat_templates does not exist on "main"
+      X-Powered-By:
+      - huggingface-moon
+      X-Request-Id:
+      - Root=1-69d9a2ad-1e0c46f76290cb9e2f31784c;dbfce1c5-ab97-4e1b-8cdd-a51aac271670
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 1fd5050b-2e18-4dc9-8f34-80c149a59ac7
+      user-agent:
+      - unknown/None; hf_hub/1.9.0; python/3.13.12
+    method: GET
+    uri: https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false
+  response:
+    body:
+      string: !!binary |
+        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
+        /NM/AAAA//8DAAfxfMVBGQAA
+    headers:
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:58 GMT
+      ETag:
+      - W/"1941-m0CqwCT0eLaAYulV6LKBoBypnns"
+      RateLimit:
+      - '"api";r=498;t=278'
+      RateLimit-Policy:
+      - '"fixed window";"api";q=500;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+      Via:
+      - 1.1 0abd8b642d65ac6d1fb4a130e7cd1030.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - PMqw7mDV4OC1ZYOBn5DKT5KMVqDVXdr_dI8peF04qdRr6YytHxvh6A==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Request-Id:
+      - Root=1-69d9a2ae-5d0e74ed05ca36f3258526f0;1fd5050b-2e18-4dc9-8f34-80c149a59ac7
+      content-encoding:
+      - gzip
+      cross-origin-opener-policy:
+      - same-origin
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 6c500c0c-dbcd-4d4a-acac-7fca07dce52f
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''config.json; filename="config.json";
+      Content-Length:
+      - '304'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:58 GMT
+      Location:
+      - /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22
+      RateLimit:
+      - '"resolvers";r=2989;t=278'
+      RateLimit-Policy:
+      - '"fixed window";"resolvers";q=3000;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin, Accept
+      Via:
+      - 1.1 9941278fbe03a1a2628d2f24689f6618.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - pmrcyt2qUxWU0RSDtp76ST5GNTZF7AvePwMxWC2Ex9k2G3VFhTvZGw==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-Hub-Cache:
+      - HIT
+      X-Linked-ETag:
+      - '"d1514c3162bbe87b343f565fadc62e6c06f04f03"'
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-69d9a2ae-7fa9b9c91d2aa2a105bbff90;6c500c0c-dbcd-4d4a-acac-7fca07dce52f
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - e57a1c4c-125f-417b-ab6b-9fa0f7d6efdb
+      user-agent:
+      - sentence-transformers/None; hf_hub/1.9.0; python/3.13.12
+    method: HEAD
+    uri: https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Age:
+      - '24858052'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''config.json; filename="config.json";
+      Content-Length:
+      - '190'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Fri, 27 Jun 2025 08:23:06 GMT
+      ETag:
+      - '"d1514c3162bbe87b343f565fadc62e6c06f04f03"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 e1da043b498ffd67aac9137eea231056.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Tud0pyM2RMy9aaQ2pM1cXYzHSEMb3T6C3mVGTVuOqPW3a7Z-9lkmfQ==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Hit from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+      X-Request-Id:
+      - Root=1-685e54ea-5e52ba932dfca7c535deadff;b81f1be1-2e68-4d99-9c39-0921c632853e
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Host:
+      - searx:8888
+      X-Amzn-Trace-Id:
+      - 9da11116-000c-4d15-ae1d-cad205ef9504
+      user-agent:
+      - unknown/None; hf_hub/1.9.0; python/3.13.12
+    method: GET
+    uri: https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2
+  response:
+    body:
+      string: !!binary |
+        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
+        fwAAAP//AwAd2zoJvhoAAA==
+    headers:
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash
+      Access-Control-Max-Age:
+      - '86400'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 11 Apr 2026 01:23:59 GMT
+      ETag:
+      - W/"1abe-9k5aXe9CttDXFfmFgJjxHMBE1bI"
+      RateLimit:
+      - '"api";r=497;t=278'
+      RateLimit-Policy:
+      - '"fixed window";"api";q=500;w=300'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+      Via:
+      - 1.1 169ea2bad2c1d720f79ea9be111c7bcc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ymwD5y1I1mNIr5Owe_8HmXFZ23bpDjx-nwMNFLMX-DvT4A-zJ3n7Lg==
+      X-Amz-Cf-Pop:
+      - BCN50-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Request-Id:
+      - Root=1-69d9a2ae-01da0b5e0fef65dc4799cf11;9da11116-000c-4d15-ae1d-cad205ef9504
+      content-encoding:
+      - gzip
+      cross-origin-opener-policy:
+      - same-origin
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+version: 1
