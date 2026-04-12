@@ -52,6 +52,7 @@
           export PLAYWRIGHT_BROWSERS_PATH="${pkgs.playwright-driver.browsers}"
           export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true
           export PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+          export TRANSFORMERS_VERBOSITY=error
         '';
       };
     };
