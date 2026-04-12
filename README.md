@@ -1,5 +1,7 @@
 # Better Web
 
+> Currently in alpha. (Code quality, and perfomance is not well optimized. MVP prooved to be usefull. I am working on refactoring, mcp, and better cli in dev branch. will get merged soon
+
 Terminal-first web research tool. Search the web, scrape pages, score content quality, filter out junk — get clean markdown ready for LLM consumption.
 
 ![demo](https://raw.githubusercontent.com/wh1le/better-web/main/assets/demo.gif)
