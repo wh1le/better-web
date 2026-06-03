@@ -4,6 +4,7 @@ import threading
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 
+import pytest
 import vcr
 
 CASSETTES_DIR = os.path.join(os.path.dirname(__file__), "cassettes")
@@ -49,18 +50,21 @@ class _ReplayHandler(SimpleHTTPRequestHandler):
         pass
 
 
-_server = None
+class _ReusableHTTPServer(HTTPServer):
+    allow_reuse_address = True
+    allow_reuse_port = True
 
 
-def start_replay_server():
-    global _server
-    if _server is not None:
-        return _server
-    _server = HTTPServer((REPLAY_HOST, REPLAY_PORT), _ReplayHandler)
-    _server.allow_reuse_address = True
-    thread = threading.Thread(target=_server.serve_forever, daemon=True)
+@pytest.fixture(scope="session", autouse=True)
+def replay_server():
+    if os.environ.get("VCR_RECORD"):
+        yield None
+        return
+    server = _ReusableHTTPServer((REPLAY_HOST, REPLAY_PORT), _ReplayHandler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
-    return _server
+    yield server
+    server.shutdown()
 
 
 def load_html_fixtures(name):

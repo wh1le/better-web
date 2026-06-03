@@ -4,25 +4,29 @@ from contextlib import contextmanager
 from rich.console import Console
 from rich.progress import BarColumn, MofNCompleteColumn, Progress, TextColumn
 
-__all__ = ["console", "status", "progress", "info", "warn", "error", "done"]
+__all__ = ["console", "status", "progress", "info", "warn", "error", "done", "step"]
 
 console = Console(stderr=True)
 
 
 def info(msg: str):
-    console.print(msg)
+    console.print(f"  {msg}")
 
 
 def warn(msg: str):
-    console.print(f"[yellow]{msg}[/yellow]")
+    console.print(f"  [yellow]{msg}[/yellow]")
 
 
 def error(msg: str):
-    console.print(f"[red]{msg}[/red]")
+    console.print(f"  [red]{msg}[/red]")
 
 
 def done(msg: str):
-    console.print(f"[green]{msg}[/green]")
+    console.print(f"  [green]{msg}[/green]")
+
+
+def step(label: str):
+    console.print(f"\n  [bold dim]▸ {label}[/bold dim]")
 
 
 @contextmanager
@@ -34,7 +38,7 @@ def status(msg: str):
 @contextmanager
 def progress(label: str, total: int):
     with Progress(
-        TextColumn("{task.description}"),
+        TextColumn("  {task.description}"),
         BarColumn(),
         MofNCompleteColumn(),
         console=console,

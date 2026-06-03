@@ -7,7 +7,7 @@ import sys
 
 import trafilatura
 
-from lib.logging import progress
+from lib.logging import info, progress, step
 from lib.quality import score as quality_score
 from lib.settings import settings
 from lib.youtube import get_transcript, is_youtube_url
@@ -30,6 +30,7 @@ def extract_content(html: str) -> str | None:
 
 async def scrape_urls(urls: list[str]) -> tuple[list, dict]:
     """Scrape a list of URLs with rate limiting. Returns (pages, log)."""
+    step("Scrape")
     from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
     scrape_settings = settings.scrape
@@ -83,15 +84,21 @@ async def scrape_urls(urls: list[str]) -> tuple[list, dict]:
     finally:
         await ctx.__aexit__(None, None, None)
 
+    fetched = sum(1 for p in pages if not isinstance(p, Exception) and getattr(p, "success", False))
+    msg = f"fetched {fetched}/{len(urls)} pages"
+    if log["blocked"]:
+        msg += f", {log['blocked']} blocked"
+    info(f"[dim]{msg}[/dim]")
     return pages, log
 
 
 def process_pages(results: list[dict], pages: list) -> tuple[list[dict], dict]:
     """Extract content from scraped pages. Returns (entries, log)."""
+    step("Score")
     log = {"scraped": 0, "errors": 0}
     entries = []
 
-    with progress("Analyzing", total=len(results)) as advance:
+    with progress("Scoring", total=len(results)) as advance:
         for result, page in zip(results, pages, strict=False):
             entry = {
                 "title": result["title"],
@@ -128,5 +135,11 @@ def process_pages(results: list[dict], pages: list) -> tuple[list[dict], dict]:
                     log["errors"] += 1
             entries.append(entry)
             advance()
+
+    scored = [e for e in entries if e.get("quality")]
+    high = sum(1 for e in scored if e["quality"].get("score", 0) >= 70)
+    med = sum(1 for e in scored if 45 <= e["quality"].get("score", 0) < 70)
+    low = sum(1 for e in scored if e["quality"].get("score", 0) < 45)
+    info(f"[dim]{high} high, {med} med, {low} low[/dim]")
 
     return entries, log

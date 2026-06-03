@@ -10,7 +10,7 @@ from rich.console import Console
 
 from lib.dedup import deduplicate
 from lib.digest import digest, find_latest, stats
-from lib.logging import done, error, info, warn
+from lib.logging import done, error, info, step, warn
 from lib.output import output_path, save, slugify
 from lib.scrape import process_pages, rewrite_url, scrape_urls
 from lib.search import dedup, search
@@ -31,6 +31,7 @@ def app():
 @click.option("--no-copy", is_flag=True, help="Skip copying digest to clipboard")
 def search_cmd(queries, limit, engines, quick, no_copy):
     """Search 1+ queries, scrape and save."""
+    step("Search")
     all_results = []
     for q in queries:
         results = dedup(search(q, limit, engines))
@@ -63,7 +64,6 @@ def search_cmd(queries, limit, engines, quick, no_copy):
         urls = [rewrite_url(r["url"]) for r in unique]
         pages, scrape_log = await scrape_urls(urls)
         entries, proc_log = process_pages(unique, pages)
-
         before_dedup = len(entries)
         entries = deduplicate(entries)
         dedup_removed = before_dedup - len(entries)
@@ -77,11 +77,13 @@ def search_cmd(queries, limit, engines, quick, no_copy):
             "results": entries,
         }
 
+        step("Save")
         out_file = output_path("search", slugify(query_str))
         save(data, out_file)
         _summary(scrape_log, proc_log, entries)
 
         if not no_copy:
+            step("Digest")
             import subprocess
             text = digest(out_file)
             txt_file = out_file.replace(".json", ".txt")
@@ -89,11 +91,11 @@ def search_cmd(queries, limit, engines, quick, no_copy):
                 f.write(text)
             subprocess.run(["wl-copy"], input=text.encode(), check=True)
             s = stats(out_file)
-            filtered = s.get('filtered', 0)
-            msg = f"Copied to clipboard (~{s['tokens']:,} tokens, {s['usable']} pages)"
+            filtered = s.get("filtered", 0)
+            msg = f"copied to clipboard (~{s['tokens']:,} tokens, {s['usable']} pages)"
             if filtered:
-                msg += f" [dim]({filtered} low-quality filtered out)[/dim]"
-            info(msg)
+                msg += f" [dim]({filtered} low-quality filtered)[/dim]"
+            done(msg)
 
     asyncio.run(_run())
 

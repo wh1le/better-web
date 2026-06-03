@@ -81,12 +81,69 @@ Every page gets 0-100 based on:
 
 Pages below `min_quality_score` (default 30) are filtered out. Remaining pages are sorted best-first and tier-labeled (`HIGH`/`MED`/`LOW`).
 
+## MCP Server
+
+Expose better-web as an MCP server for Claude, Gemini, Cursor, and other AI agents.
+
+<details>
+<summary>Claude Code</summary>
+<pre>
+claude mcp add better-web -- pipx run better-web
+</pre>
+</details>
+
+<details>
+<summary>Claude Desktop</summary>
+<p>Add to <code>claude_desktop_config.json</code>:</p>
+<pre lang="json">
+{
+  "mcpServers": {
+    "better-web": {
+      "command": "nix",
+      "args": ["develop", "/path/to/better-web", "--command", "bw-mcp"]
+    }
+  }
+}
+</pre>
+</details>
+
+<details>
+<summary>Cursor</summary>
+<p>Start the server first: <code>bw-mcp --transport http --port 8000</code></p>
+<p>Add to <code>.cursor/mcp.json</code>:</p>
+<pre lang="json">
+{
+  "mcpServers": {
+    "better-web": {
+      "type": "http",
+      "url": "http://localhost:8000/mcp"
+    }
+  }
+}
+</pre>
+</details>
+
+<details>
+<summary>Gemini CLI</summary>
+<pre lang="json">
+{
+  "mcpServers": {
+    "better-web": {
+      "command": "nix",
+      "args": ["develop", "/path/to/better-web", "--command", "bw-mcp"]
+    }
+  }
+}
+</pre>
+</details>
+
 ## Config
 
 `config.yaml` — SearXNG URL, scrape timing, quality thresholds, blocklist sources. Static lists (TLDs, blocked domains, AI phrases) live in `data/*.txt`.
 
 ## TODO
 
+- [ ] Publish to PyPI
 - [ ] Support XDG configuration path at `~/.config/bw`
 
 ## License

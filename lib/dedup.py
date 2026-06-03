@@ -1,6 +1,7 @@
 """Content deduplication using MinHash LSH."""
 from datasketch import MinHashLSH
 
+from lib.logging import info, step
 from lib.settings import settings
 from lib.shingling import minhash, shingle
 
@@ -10,7 +11,9 @@ def deduplicate(entries: list[dict]) -> list[dict]:
 
     Keeps the highest quality version of duplicates.
     """
+    step("Dedup")
     if not entries:
+        info("[dim]nothing to deduplicate[/dim]")
         return entries
 
     dedup_settings = settings.dedup
@@ -53,5 +56,11 @@ def deduplicate(entries: list[dict]) -> list[dict]:
         except ValueError:
             pass
         kept.append(entry)
+
+    removed = len(entries_sorted) - len(kept)
+    if removed:
+        info(f"[dim]dropped {removed} near-duplicates, {len(kept)} remain[/dim]")
+    else:
+        info(f"[dim]no duplicates across {len(kept)} pages[/dim]")
 
     return kept

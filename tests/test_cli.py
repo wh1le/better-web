@@ -7,10 +7,10 @@ from click.testing import CliRunner
 
 from lib.cli import app
 from tests.conftest import (
+    SEARX_SCRUB,
     search_vcr,
     load_html_fixtures,
     save_html_fixtures,
-    start_replay_server,
 )
 
 runner = CliRunner()
@@ -41,9 +41,15 @@ def _run_search():
         return result
 
     url_map = load_html_fixtures(FIXTURE_NAME)
-    start_replay_server()
-    with patch("lib.scrape.rewrite_url", lambda url: url_map.get(url, url)):
-        result = runner.invoke(app, ["search", "--no-copy", "--limit", LIMIT] + list(QUERIES))
+
+    from lib.settings import settings
+    original_url = settings.searx_engine.url
+    settings._config.set("searx_engine.url", SEARX_SCRUB)
+    try:
+        with patch("lib.scrape.rewrite_url", lambda url: url_map.get(url, url)):
+            result = runner.invoke(app, ["search", "--no-copy", "--limit", LIMIT] + list(QUERIES))
+    finally:
+        settings._config.set("searx_engine.url", original_url)
     return result
 
 
