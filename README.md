@@ -1,6 +1,6 @@
 # Better Web
 
-> Currently in alpha. Code quality is not there because of ai. Vibe coded MVP proved to be useful. I am working on full refactoring, MCP, and a better CLI in the dev branch.
+> Started as fast way to get going, currently paused because I don't have time, refactoring and adapting.
 
 Terminal-first web research tool. Search the web, scrape pages, score content quality, filter out junk — get clean markdown ready for LLM consumption.
 
